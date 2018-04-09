@@ -2,11 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'aur-template',
-  template: `
-    <p>
-      aur-template works!
-    </p>
-  `,
+  templateUrl: './template.component.html',
   styles: []
 })
 export class TemplateComponent implements OnInit {
