@@ -17,7 +17,7 @@
       "dom"
     ],
     "paths": {
-      "angular-template": [
+      "@aurochses/angular-template": [
         "dist/angular-template"
       ]
     }

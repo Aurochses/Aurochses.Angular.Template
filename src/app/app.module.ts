@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
-import { TemplateModule } from 'angular-template';
+import { TemplateModule } from '@aurochses/angular-template';
 
 @NgModule({
   declarations: [
