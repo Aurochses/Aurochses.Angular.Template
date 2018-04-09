@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'angular-template',
+  selector: 'aur-template',
   template: `
     <p>
-      angular-template works!
+      aur-template works!
     </p>
   `,
   styles: []
 })
-export class AngularTemplateComponent implements OnInit {
+export class TemplateComponent implements OnInit {
 
   constructor() { }
 
