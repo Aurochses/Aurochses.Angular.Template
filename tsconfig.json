@@ -15,6 +15,11 @@
     "lib": [
       "es2017",
       "dom"
-    ]
+    ],
+    "paths": {
+      "angular-template": [
+        "dist/angular-template"
+      ]
+    }
   }
 }
