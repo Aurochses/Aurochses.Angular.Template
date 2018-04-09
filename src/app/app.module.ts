@@ -3,7 +3,8 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
-import { TemplateModule } from '@aurochses/angular-template';
+import { TemplateSettings, TemplateModule } from '@aurochses/angular-template';
+import { templateSettings } from '../environments/template-settings';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,9 @@ import { TemplateModule } from '@aurochses/angular-template';
     BrowserModule,
     TemplateModule
   ],
-  providers: [],
+  providers: [
+    { provide: TemplateSettings, useValue: templateSettings }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
