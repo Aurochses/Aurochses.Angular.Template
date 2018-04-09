@@ -3,12 +3,15 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
+import { AngularTemplateModule } from 'angular-template';
+
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AngularTemplateModule
   ],
   providers: [],
   bootstrap: [AppComponent]
