@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 import { MatToolbarModule, MatIconModule } from '@angular/material';
 
@@ -9,6 +10,7 @@ import { TemplateService } from './services/template.service';
 
 @NgModule({
   imports: [
+    CommonModule,
     MatToolbarModule,
     MatIconModule
   ],
