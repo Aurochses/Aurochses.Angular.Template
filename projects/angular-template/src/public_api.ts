@@ -1,7 +1,7 @@
 /*
- * Public API Surface of angular-template
+ * Public API Surface of template
  */
 
-export * from './lib/angular-template.service';
-export * from './lib/angular-template.component';
-export * from './lib/angular-template.module';
+export * from './lib/template.service';
+export * from './lib/template.component';
+export * from './lib/template.module';
