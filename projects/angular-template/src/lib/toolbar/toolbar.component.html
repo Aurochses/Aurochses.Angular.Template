@@ -1,7 +1,7 @@
-<mat-toolbar color="primary">
-  <a md-icon-button *ngIf="templateService.settings.sidenav.enable" (click)="templateService.toggleSidenav()">
-    <mat-icon>menu</mat-icon>
-  </a>
+<mat-toolbar>
+  <button mat-icon-button *ngIf="templateService.settings.sidenav.enable" (click)="templateService.toggleSidenav()">
+    <mat-icon aria-label="Menu">menu</mat-icon>
+  </button>
   <span>
     Aurochses2
   </span>

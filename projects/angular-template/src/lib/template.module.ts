@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { MatToolbarModule, MatIconModule } from '@angular/material';
+import { MatToolbarModule, MatButtonModule, MatIconModule } from '@angular/material';
 
 import { ToolbarComponent } from './toolbar/toolbar.component';
 
@@ -12,6 +12,7 @@ import { TemplateService } from './services/template.service';
   imports: [
     CommonModule,
     MatToolbarModule,
+    MatButtonModule,
     MatIconModule
   ],
   declarations: [
