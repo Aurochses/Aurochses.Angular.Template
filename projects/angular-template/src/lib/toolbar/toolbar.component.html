@@ -2,6 +2,7 @@
   <button mat-icon-button *ngIf="templateService.settings.sidenav.enable" (click)="templateService.toggleSidenav()">
     <mat-icon aria-label="Menu">menu</mat-icon>
   </button>
+  <aur-toolbar-logo *ngIf="templateService.settings.toolbar.logo.enable && !templateService.settings.sidenav.enable || templateService.settings.sidenav.mode === 'side'"></aur-toolbar-logo>
   <span>
     Aurochses2
   </span>

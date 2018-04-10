@@ -3,10 +3,11 @@ import { CommonModule } from '@angular/common';
 
 import { MatToolbarModule, MatButtonModule, MatIconModule } from '@angular/material';
 
-import { ToolbarComponent } from './toolbar/toolbar.component';
-
-import { TemplateComponent } from './template.component';
 import { TemplateService } from './services/template.service';
+import { TemplateComponent } from './template.component';
+
+import { ToolbarComponent } from './toolbar/toolbar.component';
+import { LogoComponent } from './toolbar/logo/logo.component';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { TemplateService } from './services/template.service';
   ],
   declarations: [
     TemplateComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    LogoComponent
   ],
   providers: [
     TemplateService
