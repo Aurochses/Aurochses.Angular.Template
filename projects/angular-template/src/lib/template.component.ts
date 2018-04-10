@@ -4,7 +4,8 @@ import { TemplateService } from './services/template.service';
 
 @Component({
   selector: 'aur-template',
-  templateUrl: './template.component.html'
+  templateUrl: './template.component.html',
+  styleUrls: ['template.component.scss'],
 })
 export class TemplateComponent implements OnInit {
 
