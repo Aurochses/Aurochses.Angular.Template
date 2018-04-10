@@ -5,7 +5,8 @@ import { TemplateService } from '../services/template.service';
 
 @Component({
     selector: 'aur-sidenav',
-    templateUrl: './sidenav.component.html'
+    templateUrl: './sidenav.component.html',
+    styleUrls: ['sidenav.component.scss'],
 })
 export class SidenavComponent {
 

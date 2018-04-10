@@ -1,10 +1,8 @@
 <mat-sidenav-container>
-    <mat-sidenav *ngIf="settings.sidenav.enable" [class.sidenav-collapse]="settings.sidenav.collapse" mode="{{ settings.sidenav.mode }}" opened="{{ settings.sidenav.open }}" align="start" (close)="closeSidenav()" (open)="openSidenav()" (mouseout)="toggleSidenavCollapse()">
+    <mat-sidenav *ngIf="settings.sidenav.enable" [class.sidenav-collapse]="settings.sidenav.collapse" fixedInViewport="true" fixedTopGap="64" mode="{{ settings.sidenav.mode }}" opened="{{ settings.sidenav.open }}" (close)="closeSidenav()" (open)="openSidenav()" (mouseout)="toggleSidenavCollapse()">
         <span>Menu</span>
     </mat-sidenav>
-    <div fxLayout="column" fxFlexFill>
-        <div fxFlex>
-            <router-outlet></router-outlet>
-        </div>
-    </div>
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
 </mat-sidenav-container>

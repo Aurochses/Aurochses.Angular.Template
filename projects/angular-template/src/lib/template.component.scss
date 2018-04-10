@@ -1,7 +1,3 @@
-@import '~@angular/material/theming';
-
-@include mat-core();
-
 aur-toolbar {
     position: fixed;
     top: 0;
@@ -21,4 +17,9 @@ aur-toolbar::after {
     right: 0px;
     width: 100%;
     z-index: 2050;
+}
+
+aur-sidenav {
+    display: block;
+    margin-top: 64px;
 }
