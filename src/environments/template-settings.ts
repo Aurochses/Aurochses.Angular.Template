@@ -6,7 +6,7 @@ export const templateSettings: TemplateSettings = {
     toolbar: {
         logo: {
             enable: true,
-            url: 'assets/logo.png'
+            url: 'assets/logotype.png'
         },
         breadcrumb: true,
         search: {
