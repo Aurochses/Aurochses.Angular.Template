@@ -29,8 +29,8 @@ export const templateSettings: TemplateSettings = {
     },
     sidenav: {
         enable: true,
-        open: false,
-        mode: 'over',
+        open: true,
+        mode: 'side',
         collapse: false
     },
     fabButton: true,
