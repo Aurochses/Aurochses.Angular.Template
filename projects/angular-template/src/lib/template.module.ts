@@ -9,6 +9,10 @@ import { TemplateComponent } from './template.component';
 
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { LogoComponent } from './toolbar/logo/logo.component';
+import { FullScreenComponent } from './toolbar/full-screen/full-screen.component';
+import { ApplicationsComponent } from './toolbar/applications/applications.component';
+import { NotificationsComponent } from './toolbar/notifications/notifications.component';
+import { UserComponent } from './toolbar/user/user.component';
 
 import { SidenavComponent } from './sidenav/sidenav.component';
 
@@ -25,6 +29,10 @@ import { SidenavComponent } from './sidenav/sidenav.component';
     TemplateComponent,
     ToolbarComponent,
     LogoComponent,
+    FullScreenComponent,
+    ApplicationsComponent,
+    NotificationsComponent,
+    UserComponent,
     SidenavComponent
   ],
   providers: [

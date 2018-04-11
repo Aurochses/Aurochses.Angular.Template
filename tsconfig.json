@@ -18,7 +18,8 @@
     ],
     "paths": {
       "@aurochses/angular-template": [
-        "dist/angular-template" // "projects/angular-template/src/public_api.ts"
+        //"dist/angular-template"
+        "projects/angular-template/src/public_api.ts"
       ]
     }
   }
