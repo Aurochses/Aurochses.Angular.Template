@@ -5,7 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 
-import { TemplateSettings, TemplateModule } from '@aurochses/angular-template';
+import { TemplateSettingsModel, TemplateModule } from '@aurochses/angular-template';
 import { templateSettings } from '../environments/template-settings';
 
 import { HomeComponent } from './home/home.component';
@@ -26,7 +26,7 @@ const routes: Routes = [
     TemplateModule
   ],
   providers: [
-    { provide: TemplateSettings, useValue: templateSettings }
+    { provide: TemplateSettingsModel, useValue: templateSettings }
   ],
   bootstrap: [AppComponent]
 })
