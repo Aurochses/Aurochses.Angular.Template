@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
-import { MatToolbarModule, MatButtonModule, MatIconModule, MatSidenavModule } from '@angular/material';
+import { MatToolbarModule, MatButtonModule, MatIconModule, MatMenuModule, MatSidenavModule } from '@angular/material';
 
 import { TemplateService } from './services/template.service';
 import { TemplateComponent } from './template.component';
@@ -23,6 +23,7 @@ import { SidenavComponent } from './sidenav/sidenav.component';
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
+    MatMenuModule,
     MatSidenavModule
   ],
   declarations: [
