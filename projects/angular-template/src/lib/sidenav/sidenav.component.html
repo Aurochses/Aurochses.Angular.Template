@@ -1,5 +1,6 @@
-<mat-sidenav-container>
-    <mat-sidenav *ngIf="settings.sidenav.enable" [class.sidenav-collapse]="settings.sidenav.collapse" fixedInViewport="true" fixedTopGap="64" mode="{{ settings.sidenav.mode }}" opened="{{ settings.sidenav.open }}" (close)="closeSidenav()" (open)="openSidenav()" (mouseout)="toggleSidenavCollapse()">
+<mat-sidenav-container [style.marginTop.px]="mobileQuery.matches ? 56 : 64">
+    <mat-sidenav *ngIf="templateService.settings.sidenav.enable" [mode]="mobileQuery.matches ? 'over' : templateService.settings.sidenav.mode" [opened]="templateService.settings.sidenav.open" fixedInViewport="true" [fixedTopGap]="mobileQuery.matches ? 56 : 64" (openedChange)="onOpenedChange($event)">
+        <p>Menu FIRST</p>
         <p>Menu</p>
         <p>Menu</p>
         <p>Menu</p>
@@ -48,8 +49,7 @@
         <p>Menu</p>
         <p>Menu</p>
         <p>Menu</p>
-        <p>Menu</p>
-        <p>Menu</p>
+        <p>Menu LAST</p>
     </mat-sidenav>
     <mat-sidenav-content>
         <router-outlet></router-outlet>

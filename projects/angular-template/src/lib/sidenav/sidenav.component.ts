@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { MediaMatcher } from '@angular/cdk/layout';
+import { ChangeDetectorRef, Component, OnInit, OnDestroy } from '@angular/core';
 
-import { TemplateSettings } from '../models/template-settings.model';
 import { TemplateService } from '../services/template.service';
 
 @Component({
@@ -8,28 +8,30 @@ import { TemplateService } from '../services/template.service';
     templateUrl: './sidenav.component.html',
     styleUrls: ['sidenav.component.scss'],
 })
-export class SidenavComponent {
+export class SidenavComponent implements OnInit, OnDestroy {
 
-    public settings: TemplateSettings;
+    private _mobileQueryListener: () => void;
 
-    constructor(private templateService: TemplateService) {
-        this.settings = templateService.settings;
+    public mobileQuery: MediaQueryList;
+
+    constructor(private changeDetectorRef: ChangeDetectorRef, private media: MediaMatcher, private templateService: TemplateService) {
+        this.mobileQuery = media.matchMedia('(max-width: 599px)');
+        this._mobileQueryListener = () => changeDetectorRef.detectChanges();
+        this.mobileQuery.addListener(this._mobileQueryListener);
     }
 
-    toggleSidenavCollapse() {
-        if (this.templateService.settings.sidenav.collapse) {
-            this.templateService.resizeSidenav();
+    ngOnInit(): void {
+        if (this.mobileQuery.matches) {
+            this.templateService.settings.sidenav.open = false;
         }
     }
 
-    closeSidenav() {
-        this.templateService.settings.sidenav.open = false;
-        this.templateService.resizeSidenav();
+    ngOnDestroy(): void {
+        this.mobileQuery.removeListener(this._mobileQueryListener);
     }
 
-    openSidenav() {
-        this.templateService.settings.sidenav.open = true;
-        this.templateService.resizeSidenav();
+    onOpenedChange(opened: boolean) {
+        this.templateService.settings.sidenav.open = opened;
     }
 
 }

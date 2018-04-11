@@ -1,17 +1,12 @@
 export class TemplateSettings {
-  darkMode: boolean;
-  defaultLang: string;
   toolbar: {
     logo: {
       enable: boolean;
       url: string;
     };
-    breadcrumb: boolean;
-    search: {
+    fullScreen: {
       enable: boolean;
-      url: string;
     };
-    fullScreen: boolean;
     applications: {
       enable: boolean;
       url: string;
@@ -27,13 +22,7 @@ export class TemplateSettings {
   };
   sidenav: {
     enable: boolean;
-    open: boolean;
     mode: string;
-    collapse: boolean;
-  };
-  fabButton: boolean;
-  footer: {
-    enable: boolean;
-    url: string;
+    open: boolean;
   };
 }
