@@ -1,6 +1,6 @@
-import { TemplateSettings } from '@aurochses/angular-template';
+import { TemplateSettingsModel } from '@aurochses/angular-template';
 
-export const templateSettings: TemplateSettings = {
+export const templateSettings: TemplateSettingsModel = {
     toolbar: {
         logo: {
             enable: true,

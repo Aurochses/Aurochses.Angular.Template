@@ -1,4 +1,4 @@
-export class TemplateSettings {
+export class TemplateSettingsModel {
   toolbar: {
     logo: {
       enable: boolean;
