@@ -4,10 +4,9 @@
 
 @include mat-core();
 
-$primary: mat-palette($mat-gray, A100);
+$primary: mat-palette($mat-gray, 500);
 $accent:  mat-palette($mat-red, 500, A200, A400);
 $warn:    mat-palette($mat-red, 500);
-$warn-d:  mat-palette($mat-red, 500);
 
 $theme: mat-light-theme($primary, $accent, $warn);
 
@@ -24,6 +23,14 @@ body {
 
 h1, h2, h3, h4 {
     font-weight: normal;
+}
+
+aur-toolbar {
+    mat-toolbar {
+        &.mat-toolbar {
+            background-color: #ffffff;
+        }
+    }
 }
 
 aur-sidenav {

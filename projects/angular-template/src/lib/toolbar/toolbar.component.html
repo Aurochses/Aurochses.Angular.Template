@@ -1,5 +1,5 @@
-<mat-toolbar color="primary">
-  <button mat-icon-button *ngIf="templateService.settings.sidenav.enable" (click)="templateService.toggleSidenav()">
+<mat-toolbar>
+  <button mat-icon-button *ngIf="templateService.settings.sidenav.enable" color="primary" (click)="templateService.toggleSidenav()">
     <mat-icon>menu</mat-icon>
   </button>
   <aur-toolbar-logo *ngIf="templateService.settings.toolbar.logo.enable"></aur-toolbar-logo>
