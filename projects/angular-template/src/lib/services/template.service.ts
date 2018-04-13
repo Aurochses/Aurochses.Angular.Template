@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { TemplateSettingsModel } from '../models/template-settings.model';
 
-@Injectable({
-  providedIn: TemplateService,
-})
+@Injectable()
 export class TemplateService {
 
   public settings: TemplateSettingsModel;
