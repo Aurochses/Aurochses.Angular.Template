@@ -1,0 +1,56 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/theming';
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+@include mat-core();
+
+$primary: mat-palette($mat-gray, 500);
+$accent:  mat-palette($mat-red, 500, A200, A400);
+$warn:    mat-palette($mat-red, 500);
+
+$theme: mat-light-theme($primary, $accent, $warn);
+
+$config: mat-typography-config();
+
+@include angular-material-theme($theme);
+
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: mat-font-family($config);
+    font-weight: normal;
+}
+
+h1, h2, h3, h4 {
+    font-weight: normal;
+}
+
+aur-toolbar {
+    mat-toolbar {
+        &.mat-toolbar {
+            background-color: #ffffff;
+        }
+    }
+}
+
+aur-sidenav {
+    mat-sidenav {
+        &.mat-drawer {
+            background-color: #f5f5f5;
+            overflow: hidden;
+
+            &:hover {
+                overflow-y: auto;
+            }
+        }
+
+        &::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            height: 56px;
+            background: hsla(0, 0%, 53.3%, .4);
+        }
+    }
+}
