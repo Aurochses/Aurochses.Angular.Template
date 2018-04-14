@@ -5,7 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 
-import { TemplateSettingsModel, TemplateModule } from '@aurochses/angular-template';
+import { TemplateModule } from '@aurochses/angular-template';
 import { templateSettings } from '../environments/template-settings';
 
 import { HomeComponent } from './home/home.component';
@@ -23,10 +23,7 @@ const routes: Routes = [
     BrowserModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(routes),
-    TemplateModule
-  ],
-  providers: [
-    { provide: TemplateSettingsModel, useValue: templateSettings }
+    TemplateModule.forRoot(templateSettings)
   ],
   bootstrap: [AppComponent]
 })
