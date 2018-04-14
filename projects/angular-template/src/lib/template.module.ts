@@ -1,9 +1,10 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 import { MatToolbarModule, MatButtonModule, MatIconModule, MatMenuModule, MatSidenavModule } from '@angular/material';
 
+import { TemplateSettings } from './models/template-settings.model';
 import { TemplateService } from './services/template.service';
 import { TemplateComponent } from './template.component';
 
@@ -43,4 +44,13 @@ import { SidenavComponent } from './sidenav/sidenav.component';
     TemplateComponent
   ]
 })
-export class TemplateModule { }
+export class TemplateModule {
+  static forRoot(templateSettings: TemplateSettings): ModuleWithProviders {
+    return {
+      ngModule: TemplateModule,
+      providers: [
+        { provide: TemplateSettings, useValue: templateSettings }
+      ]
+    };
+  }
+}

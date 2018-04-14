@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { TemplateSettingsModel } from '../models/template-settings.model';
+import { TemplateSettings } from '../models/template-settings.model';
 
 @Injectable()
 export class TemplateService {
 
-  public settings: TemplateSettingsModel;
+  public settings: TemplateSettings;
 
-  constructor(settings: TemplateSettingsModel) {
+  constructor(settings: TemplateSettings) {
     this.settings = settings;
   }
 
