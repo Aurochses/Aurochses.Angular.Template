@@ -4,6 +4,8 @@ import { RouterModule } from '@angular/router';
 
 import { MatToolbarModule, MatButtonModule, MatIconModule, MatMenuModule, MatSidenavModule, MatListModule } from '@angular/material';
 
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 import { TemplateSettings } from './models/template-settings.model';
 import { TemplateService } from './services/template.service';
 import { TemplateComponent } from './template.component';
@@ -28,7 +30,8 @@ import { MenuComponent } from './sidenav/menu/menu.component';
     MatIconModule,
     MatMenuModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    FlexLayoutModule
   ],
   declarations: [
     TemplateComponent,

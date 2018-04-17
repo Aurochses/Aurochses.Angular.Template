@@ -6,7 +6,7 @@ import { TemplateService } from '../services/template.service';
 @Component({
     selector: 'aur-sidenav',
     templateUrl: './sidenav.component.html',
-    styleUrls: ['sidenav.component.scss'],
+    styleUrls: ['sidenav.component.scss']
 })
 export class SidenavComponent implements OnInit, OnDestroy {
 

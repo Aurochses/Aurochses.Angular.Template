@@ -9,6 +9,7 @@ import { TemplateModule } from '@aurochses/angular-template';
 import { templateSettings } from '../environments/template-settings';
 
 import { HomeComponent } from './home/home.component';
+import { OtherComponent } from './other/other.component';
 
 const routes: Routes = [
   {
@@ -18,13 +19,22 @@ const routes: Routes = [
       icon: 'home',
       title: 'Home'
     }
+  },
+  {
+    path: 'other',
+    component: OtherComponent,
+    data: {
+      icon: 'dashboard',
+      title: 'Other'
+    }
   }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    OtherComponent
   ],
   imports: [
     BrowserModule,

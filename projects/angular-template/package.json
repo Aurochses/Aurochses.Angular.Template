@@ -8,6 +8,7 @@
     "@angular/router": "^6.0.0-rc.1",
     "@angular/animations": "6.0.0-rc.1",
     "@angular/cdk": "6.0.0-rc.1",
-    "@angular/material": "6.0.0-rc.1"
+    "@angular/material": "6.0.0-rc.1",
+    "@angular/flex-layout": "6.0.0-beta.15"
   }
 }
