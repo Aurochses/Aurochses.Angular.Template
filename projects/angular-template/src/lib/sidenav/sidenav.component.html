@@ -3,6 +3,7 @@
         <aur-menu></aur-menu>
     </mat-sidenav>
     <mat-sidenav-content>
+        <aur-breadcrumbs *ngIf="templateService.settings.breadcrumbs.enable"></aur-breadcrumbs>
         <router-outlet></router-outlet>
     </mat-sidenav-content>
 </mat-sidenav-container>

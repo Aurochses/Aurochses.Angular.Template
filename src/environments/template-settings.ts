@@ -26,5 +26,8 @@ export const templateSettings: TemplateSettings = {
         enable: true,
         mode: 'side',
         open: true
+    },
+    breadcrumbs: {
+        enable: true
     }
 };
