@@ -11,7 +11,14 @@ import { templateSettings } from '../environments/template-settings';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent }
+  {
+    path: '',
+    component: HomeComponent,
+    data: {
+      icon: 'home',
+      title: 'Home'
+    }
+  }
 ];
 
 @NgModule({
