@@ -1,0 +1,23 @@
+<mat-nav-list *ngIf="menuItems">
+    <ng-template ngFor let-menuItem [ngForOf]="menuItems">
+        <ng-template [ngIf]="!menuItem.children">
+            <mat-list-item (click)="toggleSidenavMenu(menuItem.data.title, false, false)" routerLink="{{menuItem.path}}" routerLinkActive="active">
+                <mat-icon mat-list-icon *ngIf="menuItem.data.icon">{{menuItem.data.icon}}</mat-icon>
+                <h4 mat-line>{{menuItem.data.title}}</h4>
+            </mat-list-item>
+        </ng-template>
+        <ng-template [ngIf]="menuItem.children">
+            <mat-list-item (click)="toggleSidenavMenu(menuItem.data.title, false, true)" [class.active]="activeSubMenuName === menuItem.data.title">
+                <mat-icon mat-list-icon *ngIf="menuItem.data.icon">{{menuItem.data.icon}}</mat-icon>
+                <h4 mat-line>{{menuItem.data.title}}</h4>
+                <mat-icon *ngIf="activeSubMenuName === menuItem.data.title">expand_more</mat-icon>
+                <mat-icon *ngIf="activeSubMenuName !== menuItem.data.title">chevron_right</mat-icon>
+            </mat-list-item>
+            <mat-list-item class="sidenav-menu-sub" *ngFor="let subMenuItem of menuItem.children" (click)="toggleSidenavMenu(subMenuItem.data.title, true, false)" [class.show]="activeSubMenuName === menuItem.data.title" routerLink="{{subMenuItem.path}}" routerLinkActive="active">
+                <a mat-line class="sidenav-menu-sub-title">
+                    <span class="sidenav-collapse-item">{{subMenuItem.data.title}}</span>
+                </a>
+            </mat-list-item>
+        </ng-template>
+    </ng-template>
+</mat-nav-list>

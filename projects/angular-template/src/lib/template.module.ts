@@ -2,7 +2,7 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
-import { MatToolbarModule, MatButtonModule, MatIconModule, MatMenuModule, MatSidenavModule } from '@angular/material';
+import { MatToolbarModule, MatButtonModule, MatIconModule, MatMenuModule, MatSidenavModule, MatListModule } from '@angular/material';
 
 import { TemplateSettings } from './models/template-settings.model';
 import { TemplateService } from './services/template.service';
@@ -16,6 +16,8 @@ import { NotificationsComponent } from './toolbar/notifications/notifications.co
 import { UserComponent } from './toolbar/user/user.component';
 
 import { SidenavComponent } from './sidenav/sidenav.component';
+import { MenuService } from './services/menu.service';
+import { MenuComponent } from './sidenav/menu/menu.component';
 
 @NgModule({
   imports: [
@@ -25,7 +27,8 @@ import { SidenavComponent } from './sidenav/sidenav.component';
     MatButtonModule,
     MatIconModule,
     MatMenuModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatListModule
   ],
   declarations: [
     TemplateComponent,
@@ -35,10 +38,12 @@ import { SidenavComponent } from './sidenav/sidenav.component';
     ApplicationsComponent,
     NotificationsComponent,
     UserComponent,
-    SidenavComponent
+    SidenavComponent,
+    MenuComponent
   ],
   providers: [
-    TemplateService
+    TemplateService,
+    MenuService
   ],
   exports: [
     TemplateComponent
