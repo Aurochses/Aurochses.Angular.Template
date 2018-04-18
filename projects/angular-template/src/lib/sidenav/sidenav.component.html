@@ -1,9 +1,9 @@
 <mat-sidenav-container [style.marginTop.px]="mobileQuery.matches ? 56 : 64">
     <mat-sidenav *ngIf="templateService.settings.sidenav.enable" [mode]="mobileQuery.matches ? 'over' : templateService.settings.sidenav.mode" [opened]="templateService.settings.sidenav.open" fixedInViewport="true" [fixedTopGap]="mobileQuery.matches ? 56 : 64" (openedChange)="onOpenedChange($event)">
-        <aur-menu></aur-menu>
+        <aur-sidenav-menu></aur-sidenav-menu>
     </mat-sidenav>
     <mat-sidenav-content>
-        <aur-breadcrumbs *ngIf="templateService.settings.breadcrumbs.enable"></aur-breadcrumbs>
+        <aur-sidenav-breadcrumbs *ngIf="templateService.settings.breadcrumbs.enable"></aur-sidenav-breadcrumbs>
         <router-outlet></router-outlet>
     </mat-sidenav-content>
 </mat-sidenav-container>

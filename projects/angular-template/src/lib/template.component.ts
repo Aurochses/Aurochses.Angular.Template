@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 
-import { TemplateService } from './services/template.service';
-
 @Component({
   selector: 'aur-template',
   templateUrl: './template.component.html',
@@ -9,6 +7,6 @@ import { TemplateService } from './services/template.service';
 })
 export class TemplateComponent {
 
-  constructor(private templateService: TemplateService) { }
+  constructor() { }
 
 }
