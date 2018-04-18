@@ -4,7 +4,7 @@ import { MenuItemModel } from '../../models/menu-item.model';
 import { MenuService } from '../../services/menu.service';
 
 @Component({
-  selector: 'aur-menu',
+  selector: 'aur-sidenav-menu',
   templateUrl: './menu.component.html',
   styleUrls: ['menu.component.scss']
 })

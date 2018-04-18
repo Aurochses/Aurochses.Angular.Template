@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 
-import { TemplateService } from '../../services/template.service';
-
 @Component({
   selector: 'aur-toolbar-user',
   templateUrl: './user.component.html',
@@ -9,6 +7,6 @@ import { TemplateService } from '../../services/template.service';
 })
 export class UserComponent {
 
-  constructor(private templateService: TemplateService) { }
+  constructor() { }
 
 }
