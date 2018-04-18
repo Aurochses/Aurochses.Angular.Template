@@ -26,7 +26,17 @@ const routes: Routes = [
     data: {
       icon: 'dashboard',
       title: 'Other'
-    }
+    },
+    children: [
+      {
+        path: 'subOther',
+        component: OtherComponent,
+        data: {
+          icon: 'eye',
+          title: 'Sub Other'
+        }
+      }
+    ]
   }
 ];
 
