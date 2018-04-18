@@ -1,6 +1,4 @@
-@import '~@angular/material/theming';
-
-$accent: mat-palette($mat-red);
+@import '~src/theme';
 
 mat-list-item {
     &.active {

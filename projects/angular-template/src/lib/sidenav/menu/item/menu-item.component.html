@@ -1,5 +1,5 @@
-<mat-list-item (click)="toggleSidenavMenu(menuItem.data.title, false, false)" routerLink="{{menuItem.path}}" routerLinkActive="active">
-    <mat-icon mat-list-icon *ngIf="menuItem.data.icon" color="primary">{{menuItem.data.icon}}</mat-icon>
+<mat-list-item (click)="onMenuItemSelected(menuItem)">
+    <mat-icon mat-list-icon *ngIf="menuItem.data.icon">{{menuItem.data.icon}}</mat-icon>
     <h4 mat-line>{{menuItem.data.title}}</h4>
     <mat-icon *ngIf="menuItem.children && menuItem.children.length" [@expandIconRotate]="expanded ? 'expanded': 'collapsed'">
         expand_more
