@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 
-import { MenuItemModel } from '../../models/menu-item.model';
-import { MenuService } from '../../services/menu.service';
+import { MenuItemModel } from '../../../models/menu-item.model';
+import { MenuService } from '../../../services/menu.service';
 
 @Component({
   selector: 'aur-sidenav-menu-item',

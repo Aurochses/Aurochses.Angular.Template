@@ -20,7 +20,7 @@ import { UserComponent } from './toolbar/user/user.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { MenuService } from './services/menu.service';
 import { MenuComponent } from './sidenav/menu/menu.component';
-import { MenuItemComponent } from './sidenav/menu/menu-item.component';
+import { MenuItemComponent } from './sidenav/menu/item/menu-item.component';
 
 import { BreadcrumbsComponent } from './sidenav/breadcrumbs/breadcrumbs.component';
 
