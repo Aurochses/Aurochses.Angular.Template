@@ -25,7 +25,4 @@ export class TemplateSettings {
     mode: string;
     open: boolean;
   };
-  breadcrumbs: {
-    enable: boolean;
-  };
 }

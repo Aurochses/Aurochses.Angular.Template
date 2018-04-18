@@ -22,8 +22,6 @@ import { MenuService } from './services/menu.service';
 import { MenuComponent } from './sidenav/menu/menu.component';
 import { MenuItemComponent } from './sidenav/menu/item/menu-item.component';
 
-import { BreadcrumbsComponent } from './sidenav/breadcrumbs/breadcrumbs.component';
-
 @NgModule({
   imports: [
     CommonModule,
@@ -46,8 +44,7 @@ import { BreadcrumbsComponent } from './sidenav/breadcrumbs/breadcrumbs.componen
     UserComponent,
     SidenavComponent,
     MenuComponent,
-    MenuItemComponent,
-    BreadcrumbsComponent
+    MenuItemComponent
   ],
   providers: [
     TemplateService,

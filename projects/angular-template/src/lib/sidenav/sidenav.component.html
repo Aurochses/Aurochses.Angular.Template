@@ -3,8 +3,6 @@
         <aur-sidenav-menu></aur-sidenav-menu>
     </mat-sidenav>
     <mat-sidenav-content>
-        <aur-sidenav-breadcrumbs *ngIf="templateService.settings.breadcrumbs.enable"></aur-sidenav-breadcrumbs>
-
         <div fxLayout="row" fxLayoutAlign="center">
             <div fxFlex="1300px" fxFlex.lg="1000px" fxFlex.lt-lg="100%" ngStyle.lt-lg="padding: 0 10px;">
                 <router-outlet></router-outlet>
