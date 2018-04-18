@@ -26,12 +26,9 @@ export class MenuService {
 
         routes.forEach(
             route => {
-
                 let path = rootPath;
 
-                if (route.path.length > 0) {
-                    path += '/' + route.path;
-                }
+                path += '/' + route.path;
 
                 if (route.children) {
                     const childrenItems = this.convert(route.children, path);
