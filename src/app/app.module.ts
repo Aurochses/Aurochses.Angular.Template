@@ -32,7 +32,7 @@ const routes: Routes = [
         path: 'subOther',
         component: OtherComponent,
         data: {
-          icon: 'eye',
+          icon: 'person',
           title: 'Sub Other'
         }
       }
