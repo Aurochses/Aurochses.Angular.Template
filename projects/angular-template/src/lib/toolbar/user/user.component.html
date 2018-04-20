@@ -1,3 +1,11 @@
-<button mat-icon-button>
-    <img src="assets/avatar.png" class="avatar" />
-</button>
+<ng-template [ngIf]="userProfile">
+    <button mat-icon-button>
+        <img src="assets/avatar.png" class="avatar" />
+    </button>
+</ng-template>
+
+<ng-template [ngIf]="!userProfile">
+    <button mat-button class="signIn" (click)="signIn()">
+        Sign In
+    </button>
+</ng-template>

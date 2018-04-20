@@ -1,5 +1,13 @@
+@import '~src/theme';
+
 img.avatar {
     border-radius: 50%;
     width: 32px;
     height: 32px;
+}
+
+button.signIn {
+    color: mat-color($accent);
+    text-transform: uppercase;
+    font-weight: 600;
 }

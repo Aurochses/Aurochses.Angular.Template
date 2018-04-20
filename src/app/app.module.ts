@@ -3,6 +3,18 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
 
+import { environment } from '../environments/environment';
+
+import {
+  AuthenticationModule,
+  AuthenticationService,
+  AuthenticationGuard,
+  AuthorizationGuard,
+  AuthenticationComponent,
+  RenewComponent
+} from '@aurochses/angular-auth';
+import { authenticationSettings } from '../environments/authentication-settings';
+
 import { AppComponent } from './app.component';
 
 import { TemplateModule } from '@aurochses/angular-template';
@@ -31,12 +43,25 @@ const routes: Routes = [
       {
         path: 'subOther',
         component: OtherComponent,
+        canActivate: [
+          AuthenticationGuard,
+          AuthorizationGuard
+        ],
         data: {
           icon: 'person',
-          title: 'Sub Other'
+          title: 'Sub Other',
+          permissions: [ 'fakePermission' ]
         }
       }
     ]
+  },
+  {
+    path: 'auth',
+    component: AuthenticationComponent
+  },
+  {
+    path: 'renew',
+    component: RenewComponent
   }
 ];
 
@@ -50,7 +75,13 @@ const routes: Routes = [
     BrowserModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(routes),
-    TemplateModule.forRoot(templateSettings)
+    AuthenticationModule.forRoot(environment, authenticationSettings),
+    TemplateModule.forRoot(templateSettings),
+  ],
+  providers: [
+    AuthenticationService,
+    AuthenticationGuard,
+    AuthorizationGuard
   ],
   bootstrap: [AppComponent]
 })
