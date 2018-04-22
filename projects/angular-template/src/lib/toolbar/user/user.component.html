@@ -4,8 +4,9 @@
     </button>
 
     <mat-menu #toolbarUserMenu="matMenu" [overlapTrigger]="false">
-        <div mat-menu-item>
-            001
+        <div class="user">
+            <div>{{userProfile.given_name}} {{userProfile.family_name}}</div>
+            <div>{{userProfile.email}}</div>
         </div>
         <button mat-menu-item>
             <mat-icon>notifications_off</mat-icon>
