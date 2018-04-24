@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 import { MatToolbarModule, MatButtonModule, MatIconModule, MatMenuModule, MatSidenavModule, MatListModule } from '@angular/material';
+import { MatCardModule } from '@angular/material/card';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -32,6 +33,7 @@ import { MenuItemComponent } from './sidenav/menu/item/menu-item.component';
     MatMenuModule,
     MatSidenavModule,
     MatListModule,
+    MatCardModule,
     FlexLayoutModule
   ],
   declarations: [
