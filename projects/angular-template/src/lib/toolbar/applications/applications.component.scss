@@ -1,0 +1,43 @@
+@import '~src/theme';
+
+.toolbarApplicationsMenu {
+    padding: 20px;
+    max-width: none !important;
+
+    &::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        height: 56px;
+        background: hsla(0, 0%, 53.3%, .4);
+    }
+
+    .mat-menu-content {
+        width: 280px;
+    }
+
+    .item {
+        width: 90px;
+        height: 90px;
+        background-color: springgreen;
+        border: 1px solid transparent;
+
+        &:hover {
+            border: 1px solid #e5e5e5;
+        }
+
+        .mat-icon-button {
+            width: 100%;
+            height: 100%;
+
+            .icon {
+                height: 64px;
+            }
+
+            .text {
+                line-height: 20px;
+            }
+        }
+    }
+}
