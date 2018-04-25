@@ -8,6 +8,6 @@ import { TemplateService } from '../../services/template.service';
 })
 export class LogoComponent {
 
-  constructor(private templateService: TemplateService) { }
+  constructor(public templateService: TemplateService) { }
 
 }
