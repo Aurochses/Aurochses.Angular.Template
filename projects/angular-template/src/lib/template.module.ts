@@ -7,6 +7,8 @@ import { MatCardModule } from '@angular/material/card';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 
+import { AuthenticationModule, AuthenticationService } from '@aurochses/angular-auth';
+
 import { TemplateSettings } from './models/template-settings.model';
 import { TemplateService } from './services/template.service';
 import { TemplateComponent } from './template.component';
@@ -34,7 +36,8 @@ import { MenuItemComponent } from './sidenav/menu/item/menu-item.component';
     MatSidenavModule,
     MatListModule,
     MatCardModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    AuthenticationModule
   ],
   declarations: [
     TemplateComponent,
@@ -49,6 +52,7 @@ import { MenuItemComponent } from './sidenav/menu/item/menu-item.component';
     MenuItemComponent
   ],
   providers: [
+    AuthenticationService,
     TemplateService,
     MenuService
   ],
