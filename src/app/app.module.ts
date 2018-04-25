@@ -34,7 +34,7 @@ import { OtherComponent } from './other/other.component';
     RouterModule,
     AppRoutesModule,
     AuthenticationModule.forRoot(environment, authenticationSettings),
-    TemplateModule.forRoot(templateSettings),
+    TemplateModule.forRoot(environment, templateSettings),
   ],
   providers: [
     AuthenticationService,

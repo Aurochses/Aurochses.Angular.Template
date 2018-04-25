@@ -8,6 +8,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AuthenticationModule, AuthenticationService } from '@aurochses/angular-auth';
 
+import { Environment } from './models/environment.model';
 import { TemplateSettings } from './models/template-settings.model';
 import { TemplateService } from './services/template.service';
 import { TemplateComponent } from './template.component';
@@ -59,10 +60,11 @@ import { MenuItemComponent } from './sidenav/menu/item/menu-item.component';
   ]
 })
 export class TemplateModule {
-  static forRoot(templateSettings: TemplateSettings): ModuleWithProviders {
+  static forRoot(environment: Environment, templateSettings: TemplateSettings): ModuleWithProviders {
     return {
       ngModule: TemplateModule,
       providers: [
+        { provide: Environment, useValue: environment },
         { provide: TemplateSettings, useValue: templateSettings }
       ]
     };
