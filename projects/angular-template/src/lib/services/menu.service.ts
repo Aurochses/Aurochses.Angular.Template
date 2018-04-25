@@ -9,7 +9,7 @@ export class MenuService {
 
     private menuItems: Array<MenuItemModel>;
 
-    constructor(private router: Router) {
+    constructor(router: Router) {
         this.menuItems = this.convert(router.config);
     }
 

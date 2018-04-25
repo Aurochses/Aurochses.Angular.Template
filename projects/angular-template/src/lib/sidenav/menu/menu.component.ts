@@ -12,8 +12,8 @@ export class MenuComponent {
 
   menuItems: Array<MenuItemModel>;
 
-  constructor(private menuService: MenuService) {
-    this.menuItems = this.menuService.getMenuItems();
+  constructor(menuService: MenuService) {
+    this.menuItems = menuService.getMenuItems();
   }
 
 }

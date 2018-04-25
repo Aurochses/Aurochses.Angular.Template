@@ -4,11 +4,7 @@ import { TemplateSettings } from '../models/template-settings.model';
 @Injectable()
 export class TemplateService {
 
-  public settings: TemplateSettings;
-
-  constructor(settings: TemplateSettings) {
-    this.settings = settings;
-  }
+  constructor(public settings: TemplateSettings) { }
 
   toggleSidenav() {
     this.settings.sidenav.open = !this.settings.sidenav.open;
