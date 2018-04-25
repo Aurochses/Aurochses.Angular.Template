@@ -9,6 +9,6 @@ import { TemplateService } from '../services/template.service';
 })
 export class ToolbarComponent {
 
-  constructor(private templateService: TemplateService) { }
+  constructor(public templateService: TemplateService) { }
 
 }
