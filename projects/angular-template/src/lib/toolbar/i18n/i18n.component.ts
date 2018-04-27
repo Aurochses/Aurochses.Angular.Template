@@ -14,8 +14,6 @@ export class I18nComponent {
   constructor(private templateService: TemplateService, public translateService: TranslateService) { }
 
   getLanguage() {
-    console.log(this.translateService.currentLang);
-
     return this.translateService.currentLang;
   }
 
