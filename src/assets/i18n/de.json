@@ -1,7 +1,9 @@
 {
-  "TOOLBAR": {
-    "USER": {
-      "SIGN_IN": "Anmelden"
+  "AUR_TEMPLATE": {
+    "TOOLBAR": {
+      "USER": {
+        "SIGN_IN": "Anmelden"
+      }
     }
   }
 }
