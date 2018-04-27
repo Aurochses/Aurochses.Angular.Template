@@ -1,7 +1,14 @@
 {
-  "TOOLBAR": {
-    "USER": {
-      "SIGN_IN": "Sign In"
+  "AUR_TEMPLATE": {
+    "TOOLBAR": {
+      "USER": {
+        "SIGN_IN": "Sign In"
+      }
+    },
+    "MENU": {
+      "HOME": "Home",
+      "OTHER": "OTHER"
     }
   }
 }
+
