@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { AuthenticationService, UserProfileModel } from '@aurochses/angular-auth';
+import { map } from 'rxjs/operators';
+
+import { AuthenticationService, UserModel, UserProfileModel } from '@aurochses/angular-auth';
 
 @Component({
   selector: 'aur-toolbar-user',
@@ -15,17 +17,37 @@ export class UserComponent implements OnInit {
   constructor(private router: Router, private authenticationService: AuthenticationService) { }
 
   ngOnInit() {
-    console.log('ngOnInit');
+    this.authenticationService.userLoadededEvent
+      .subscribe(
+        (user: UserModel) => {
+          if (user) {
+            this.userProfile = user.profile;
+          } else {
+            try {
+            this.authenticationService.signInSilent();
+            } catch (e) {
 
-    this.authenticationService.getUser().subscribe(user => {
-      console.log('getUser');
+            }
+            console.log('else');
+          }
+        }
+      );
 
-      if (user) {
-        console.log(user);
+    // this.authenticationService.isLoggedInObservable().pipe(
+    //   map(
+    //     (isLoggedIn: boolean) => {
+    //       console.log(isLoggedIn);
 
-        this.userProfile = user.profile;
-      }
-    });
+    //       if (!isLoggedIn) {
+    //         this.authenticationService.signInSilent();
+    //       }
+    //     }
+    //   )
+    // );
+
+    console.log('signInSilent start');
+    this.authenticationService.getUser();
+    console.log('signInSilent end');
   }
 
   signIn(): void {

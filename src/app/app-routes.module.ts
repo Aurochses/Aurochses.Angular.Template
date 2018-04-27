@@ -3,9 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import {
     AuthenticationGuard,
-    AuthorizationGuard,
-    AuthenticationComponent,
-    RenewComponent
+    AuthorizationGuard
 } from '@aurochses/angular-auth';
 
 import { HomeComponent } from './home/home.component';
@@ -56,12 +54,9 @@ const routes: Routes = [
         }
     },
     {
-        path: 'auth',
-        component: AuthenticationComponent
-    },
-    {
-        path: 'renew',
-        component: RenewComponent
+        path: '**',
+        pathMatch: 'prefix',
+        redirectTo: ''
     }
 ];
 @NgModule({

@@ -10,6 +10,6 @@
     "@angular/cdk": "6.0.0-rc.1",
     "@angular/material": "6.0.0-rc.1",
     "@angular/flex-layout": "6.0.0-beta.15",
-    "@aurochses/angular-auth": "1.0.0-rc.2"
+    "@aurochses/angular-auth": "1.0.0"
   }
 }
