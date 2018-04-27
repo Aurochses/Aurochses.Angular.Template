@@ -2,7 +2,10 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
-import { MatToolbarModule, MatButtonModule, MatIconModule, MatMenuModule, MatSidenavModule, MatListModule } from '@angular/material';
+import {
+  MatToolbarModule, MatButtonModule, MatIconModule, MatMenuModule, MatSidenavModule, MatListModule,
+  MatSelectModule
+} from '@angular/material';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -24,6 +27,8 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 import { MenuService } from './services/menu.service';
 import { MenuComponent } from './sidenav/menu/menu.component';
 import { MenuItemComponent } from './sidenav/menu/item/menu-item.component';
+import {TranslateModule} from "@ngx-translate/core";
+import {I18nComponent} from "./toolbar/i18n/i18n.component";
 
 @NgModule({
   imports: [
@@ -35,8 +40,10 @@ import { MenuItemComponent } from './sidenav/menu/item/menu-item.component';
     MatMenuModule,
     MatSidenavModule,
     MatListModule,
+    MatSelectModule,
     FlexLayoutModule,
-    AuthenticationModule
+    AuthenticationModule,
+    TranslateModule
   ],
   declarations: [
     TemplateComponent,
@@ -48,7 +55,8 @@ import { MenuItemComponent } from './sidenav/menu/item/menu-item.component';
     UserComponent,
     SidenavComponent,
     MenuComponent,
-    MenuItemComponent
+    MenuItemComponent,
+    I18nComponent
   ],
   providers: [
     AuthenticationService,

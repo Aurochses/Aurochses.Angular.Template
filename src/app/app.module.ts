@@ -21,6 +21,14 @@ import { templateSettings } from '../environments/template-settings';
 
 import { HomeComponent } from './home/home.component';
 import { OtherComponent } from './other/other.component';
+import {TranslateHttpLoader} from "@ngx-translate/http-loader";
+import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
+
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
+
 
 @NgModule({
   declarations: [
@@ -35,11 +43,20 @@ import { OtherComponent } from './other/other.component';
     AppRoutesModule,
     AuthenticationModule.forRoot(environment, authenticationSettings),
     TemplateModule.forRoot(environment, templateSettings),
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (createTranslateLoader),
+        deps: [HttpClient]
+      }
+    }),
+    HttpClientModule
   ],
   providers: [
     AuthenticationService,
     AuthenticationGuard,
-    AuthorizationGuard
+    AuthorizationGuard,
+    HttpClient
   ],
   bootstrap: [AppComponent]
 })

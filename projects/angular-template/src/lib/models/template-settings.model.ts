@@ -4,6 +4,9 @@ export class TemplateSettings {
       enable: boolean;
       url: string;
     };
+    i18n: {
+      enable: boolean;
+    };
     fullScreen: {
       enable: boolean;
     };
@@ -18,7 +21,7 @@ export class TemplateSettings {
     user: {
       enable: boolean;
       url: string;
-    };
+    }
   };
   sidenav: {
     enable: boolean;
