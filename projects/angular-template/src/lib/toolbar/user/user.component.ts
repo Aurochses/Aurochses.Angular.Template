@@ -31,8 +31,12 @@ export class UserComponent implements OnInit {
     this.authenticationService.trySilentSignIn();
   }
 
-  signIn(): void {
+  signIn() {
     this.authenticationService.signInRedirect(this.router.url);
+  }
+
+  signOut() {
+    this.authenticationService.signOutRedirect();
   }
 
 }

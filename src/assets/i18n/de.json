@@ -2,8 +2,13 @@
   "AUR_TEMPLATE": {
     "TOOLBAR": {
       "USER": {
-        "SIGN_IN": "Anmelden"
+        "SIGN_IN": "Anmelden",
+        "SIGN_OUT": "Ausloggen"
       }
     }
+  },
+  "MENU": {
+    "HOME": "Zuhause",
+    "OTHER": "Andere"
   }
 }
