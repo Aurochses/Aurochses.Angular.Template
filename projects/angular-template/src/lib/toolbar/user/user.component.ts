@@ -22,11 +22,13 @@ export class UserComponent implements OnInit {
         (user: UserModel) => {
           if (user) {
             this.userProfile = user.profile;
+          } else {
+            window.location.reload();
           }
         }
       );
 
-    this.authenticationService.getUser();
+    this.authenticationService.trySilentSignIn();
   }
 
   signIn(): void {
