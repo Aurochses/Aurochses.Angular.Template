@@ -15,7 +15,7 @@ const routes: Routes = [
         component: HomeComponent,
         data: {
             icon: 'home',
-            title: 'Home'
+            title: 'MENU.HOME'
         }
     },
     {
@@ -23,7 +23,7 @@ const routes: Routes = [
         component: OtherComponent,
         data: {
             icon: 'dashboard',
-            title: 'Other'
+            title: 'MENU.OTHER'
         },
         children: [
             {
@@ -50,7 +50,7 @@ const routes: Routes = [
         ],
         data: {
             icon: 'home',
-            title: 'Home'
+            title: 'MENU.HOME'
         }
     },
     {
