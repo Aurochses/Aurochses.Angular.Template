@@ -22,32 +22,11 @@ export class UserComponent implements OnInit {
         (user: UserModel) => {
           if (user) {
             this.userProfile = user.profile;
-          } else {
-            try {
-            this.authenticationService.signInSilent();
-            } catch (e) {
-
-            }
-            console.log('else');
           }
         }
       );
 
-    // this.authenticationService.isLoggedInObservable().pipe(
-    //   map(
-    //     (isLoggedIn: boolean) => {
-    //       console.log(isLoggedIn);
-
-    //       if (!isLoggedIn) {
-    //         this.authenticationService.signInSilent();
-    //       }
-    //     }
-    //   )
-    // );
-
-    console.log('signInSilent start');
     this.authenticationService.getUser();
-    console.log('signInSilent end');
   }
 
   signIn(): void {
