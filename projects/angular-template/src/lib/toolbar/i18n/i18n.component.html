@@ -1,8 +1,7 @@
-<mat-form-field class="langFrom">
-  <mat-select [value]="getLanguage()" #langSelect (selectionChange)="setLanguage(langSelect.value)">
-    <mat-option *ngFor="let lang of translate.getLangs()"
-                [value]="lang">
-      {{ lang }}
+<mat-form-field class="languageFrom">
+  <mat-select [value]="getLanguage()" #languageSelect (selectionChange)="setLanguage(languageSelect.value)">
+    <mat-option *ngFor="let language of translateService.getLangs()" [value]="language">
+      {{ language }}
     </mat-option>
   </mat-select>
 </mat-form-field>

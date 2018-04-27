@@ -9,7 +9,9 @@ import {
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 
-import { AuthenticationModule, AuthenticationService } from '@aurochses/angular-auth';
+import { TranslateModule } from '@ngx-translate/core';
+
+import { AuthenticationModule } from '@aurochses/angular-auth';
 
 import { Environment } from './models/environment.model';
 import { TemplateSettings } from './models/template-settings.model';
@@ -18,6 +20,7 @@ import { TemplateComponent } from './template.component';
 
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { LogoComponent } from './toolbar/logo/logo.component';
+import { I18nComponent } from './toolbar/i18n/i18n.component';
 import { FullScreenComponent } from './toolbar/full-screen/full-screen.component';
 import { ApplicationsComponent } from './toolbar/applications/applications.component';
 import { NotificationsComponent } from './toolbar/notifications/notifications.component';
@@ -27,8 +30,6 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 import { MenuService } from './services/menu.service';
 import { MenuComponent } from './sidenav/menu/menu.component';
 import { MenuItemComponent } from './sidenav/menu/item/menu-item.component';
-import {TranslateModule} from "@ngx-translate/core";
-import {I18nComponent} from "./toolbar/i18n/i18n.component";
 
 @NgModule({
   imports: [
@@ -42,24 +43,23 @@ import {I18nComponent} from "./toolbar/i18n/i18n.component";
     MatListModule,
     MatSelectModule,
     FlexLayoutModule,
-    AuthenticationModule,
-    TranslateModule
+    TranslateModule,
+    AuthenticationModule
   ],
   declarations: [
     TemplateComponent,
     ToolbarComponent,
     LogoComponent,
+    I18nComponent,
     FullScreenComponent,
     ApplicationsComponent,
     NotificationsComponent,
     UserComponent,
     SidenavComponent,
     MenuComponent,
-    MenuItemComponent,
-    I18nComponent
+    MenuItemComponent
   ],
   providers: [
-    AuthenticationService,
     TemplateService,
     MenuService
   ],

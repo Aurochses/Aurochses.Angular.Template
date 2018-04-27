@@ -6,6 +6,7 @@ export class TemplateSettings {
     };
     i18n: {
       enable: boolean;
+      localStorageKey: string;
     };
     fullScreen: {
       enable: boolean;

@@ -7,7 +7,8 @@ export const templateSettings: TemplateSettings = {
       url: 'assets/logo.png'
     },
     i18n: {
-      enable: true
+      enable: true,
+      localStorageKey: 'language'
     },
     fullScreen: {
       enable: true
