@@ -1,17 +1,23 @@
 import { Component } from '@angular/core';
-import {TranslateService} from "@ngx-translate/core";
+
+import { TranslateService } from "@ngx-translate/core";
+
+import { TemplateService } from '@aurochses/angular-template';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html'
 })
 export class AppComponent {
-  constructor(translate: TranslateService) {
-    translate.addLangs(['en', 'de']);
-    translate.setDefaultLang('en');
+  constructor(private templateService: TemplateService, translateService: TranslateService) {
+    translateService.addLangs(['en', 'de']);
+    translateService.setDefaultLang('en');
 
-    const storedLanguage = localStorage.getItem('language');
-    const detectedLanguage = storedLanguage ? storedLanguage : translate.getBrowserLang();
-    translate.use(detectedLanguage.match(/en|de/) ? detectedLanguage : 'en');
+    if (!localStorage.getItem(templateService.settings.toolbar.i18n.localStorageKey)) {
+      localStorage.setItem(templateService.settings.toolbar.i18n.localStorageKey, translateService.getDefaultLang());
+    }
+
+    const detectedLanguage = localStorage.getItem(templateService.settings.toolbar.i18n.localStorageKey);
+    translateService.use(detectedLanguage.match(/en|de/) ? detectedLanguage : translateService.getDefaultLang());
   }
 }

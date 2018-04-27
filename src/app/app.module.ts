@@ -1,7 +1,11 @@
+import { HttpClient, HttpClientModule } from "@angular/common/http";
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
+
+import { TranslateHttpLoader } from "@ngx-translate/http-loader";
+import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
 
 import { environment } from '../environments/environment';
 
@@ -21,9 +25,6 @@ import { templateSettings } from '../environments/template-settings';
 
 import { HomeComponent } from './home/home.component';
 import { OtherComponent } from './other/other.component';
-import {TranslateHttpLoader} from "@ngx-translate/http-loader";
-import {HttpClient, HttpClientModule} from "@angular/common/http";
-import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -37,12 +38,9 @@ export function createTranslateLoader(http: HttpClient) {
     OtherComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     BrowserAnimationsModule,
-    RouterModule,
-    AppRoutesModule,
-    AuthenticationModule.forRoot(environment, authenticationSettings),
-    TemplateModule.forRoot(environment, templateSettings),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -50,7 +48,10 @@ export function createTranslateLoader(http: HttpClient) {
         deps: [HttpClient]
       }
     }),
-    HttpClientModule
+    RouterModule,
+    AppRoutesModule,
+    AuthenticationModule.forRoot(environment, authenticationSettings),
+    TemplateModule.forRoot(environment, templateSettings)
   ],
   providers: [
     AuthenticationService,
