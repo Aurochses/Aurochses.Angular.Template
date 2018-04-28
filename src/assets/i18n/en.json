@@ -4,11 +4,13 @@
       "USER": {
         "SIGN_IN": "Sign In"
       }
-    },
-    "MENU": {
-      "HOME": "Home",
-      "OTHER": "OTHER"
     }
+  },
+  "ROUTES" :{
+    "HOME": "Home",
+    "OTHER": "Other",
+    "HOME_2": "Home 2",
+    "SUB_OTHER": "Sub Other"
   }
 }
 
