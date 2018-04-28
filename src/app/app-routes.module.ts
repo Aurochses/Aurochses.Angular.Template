@@ -1,67 +1,69 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 
 import {
-    AuthenticationGuard,
-    AuthorizationGuard
+  AuthenticationGuard,
+  AuthorizationGuard
 } from '@aurochses/angular-auth';
 
-import { HomeComponent } from './home/home.component';
-import { OtherComponent } from './other/other.component';
+import {HomeComponent} from './home/home.component';
+import {OtherComponent} from './other/other.component';
 
 const routes: Routes = [
-    {
-        path: '',
-        component: HomeComponent,
-        data: {
-            icon: 'home',
-            title: 'ROUTES.HOME'
-        }
+  {
+    path: '',
+    component: HomeComponent,
+    data: {
+      icon: 'home',
+      title: 'ROUTES.HOME'
+    }
+  },
+  {
+    path: 'other',
+    component: OtherComponent,
+    data: {
+      icon: 'dashboard',
+      title: 'ROUTES.OTHER'
     },
-    {
-        path: 'other',
-        component: OtherComponent,
-        data: {
-            icon: 'dashboard',
-            title: 'ROUTES.OTHER'
-        },
-        children: [
-            {
-                path: 'subOther',
-                component: OtherComponent,
-                canActivate: [
-                    AuthenticationGuard,
-                    AuthorizationGuard
-                ],
-                data: {
-                    icon: 'person',
-                    title: 'ROUTES.SUB_OTHER',
-                    permissions: ['fakePermission']
-                }
-            }
-        ]
-    },
-    {
-        path: 'second',
+    children: [
+      {
+        path: 'subOther',
         component: OtherComponent,
         canActivate: [
-            AuthenticationGuard,
-            AuthorizationGuard
+          AuthenticationGuard,
+          AuthorizationGuard
         ],
         data: {
-            icon: 'home',
-          title: 'ROUTES.HOME_2'
+          icon: 'person',
+          title: 'ROUTES.SUB_OTHER',
+          permissions: ['fakePermission']
         }
-    },
-    {
-        path: '**',
-        pathMatch: 'prefix',
-        redirectTo: ''
-    }
-];
-@NgModule({
-    imports: [
-        RouterModule.forRoot(routes)
+      }
     ]
+  },
+  {
+    path: 'second',
+    component: OtherComponent,
+    canActivate: [
+      AuthenticationGuard,
+      AuthorizationGuard
+    ],
+    data: {
+      icon: 'home',
+      title: 'ROUTES.HOME_2'
+    }
+  },
+  {
+    path: '**',
+    pathMatch: 'prefix',
+    redirectTo: ''
+  }
+];
+
+@NgModule({
+  imports: [
+    RouterModule.forRoot(routes)
+  ]
 })
-export class AppRoutesModule { }
+export class AppRoutesModule {
+}
