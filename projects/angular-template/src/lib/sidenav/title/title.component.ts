@@ -1,10 +1,11 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {NavigationEnd, Route, Router} from '@angular/router';
-import {TranslateService} from '@ngx-translate/core';
-import {MenuItemModel} from "../models/menu-item.model";
+import { Component, Input, OnInit } from '@angular/core';
+import { NavigationEnd, Route, Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
+
+import { MenuItemModel } from '../../models/menu-item.model';
 
 @Component({
-  selector: 'aur-title',
+  selector: 'aur-sidenav-title',
   templateUrl: './title.component.html',
   styleUrls: ['./title.component.scss']
 })

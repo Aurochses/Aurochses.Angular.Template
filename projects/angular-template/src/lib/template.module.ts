@@ -30,7 +30,7 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 import { MenuService } from './services/menu.service';
 import { MenuComponent } from './sidenav/menu/menu.component';
 import { MenuItemComponent } from './sidenav/menu/item/menu-item.component';
-import {TitleComponent} from './title/title.component';
+import { TitleComponent } from './sidenav/title/title.component';
 
 @NgModule({
   imports: [
