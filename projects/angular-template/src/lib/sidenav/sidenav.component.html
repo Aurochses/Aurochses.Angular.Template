@@ -1,12 +1,16 @@
-<mat-sidenav-container [style.marginTop.px]="mobileQuery.matches ? 56 : 64">
-    <mat-sidenav *ngIf="templateService.settings.sidenav.enable" [mode]="mobileQuery.matches ? 'over' : templateService.settings.sidenav.mode" [opened]="templateService.settings.sidenav.open" fixedInViewport="true" [fixedTopGap]="mobileQuery.matches ? 56 : 64" (openedChange)="onOpenedChange($event)">
-        <aur-sidenav-menu></aur-sidenav-menu>
-    </mat-sidenav>
-    <mat-sidenav-content>
-        <div fxLayout="row" fxLayoutAlign="center">
-            <div fxFlex="1300px" fxFlex.lg="1000px" fxFlex.lt-lg="100%" ngStyle.lt-lg="padding: 0 10px;">
-                <router-outlet></router-outlet>
-            </div>
-        </div>
-    </mat-sidenav-content>
+<mat-sidenav-container [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+  <mat-sidenav *ngIf="templateService.settings.sidenav.enable"
+               [mode]="mobileQuery.matches ? 'over' : templateService.settings.sidenav.mode"
+               [opened]="templateService.settings.sidenav.open" fixedInViewport="true"
+               [fixedTopGap]="mobileQuery.matches ? 56 : 64" (openedChange)="onOpenedChange($event)">
+    <aur-sidenav-menu></aur-sidenav-menu>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <aur-title></aur-title>
+    <div fxLayout="row" fxLayoutAlign="center">
+      <div fxFlex="1300px" fxFlex.lg="1000px" fxFlex.lt-lg="100%" ngStyle.lt-lg="padding: 0 10px;">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </mat-sidenav-content>
 </mat-sidenav-container>

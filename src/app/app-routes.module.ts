@@ -36,7 +36,7 @@ const routes: Routes = [
         data: {
           icon: 'person',
           title: 'ROUTES.SUB_OTHER',
-          permissions: ['fakePermission']
+          // permissions: ['fakePermission']
         }
       }
     ]
