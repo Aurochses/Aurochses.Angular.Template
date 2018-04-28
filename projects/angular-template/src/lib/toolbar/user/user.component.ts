@@ -5,6 +5,8 @@ import { map } from 'rxjs/operators';
 
 import { AuthenticationService, UserModel, UserProfileModel } from '@aurochses/angular-auth';
 
+import { TemplateService } from '../../services/template.service';
+
 @Component({
   selector: 'aur-toolbar-user',
   templateUrl: './user.component.html',
@@ -14,7 +16,7 @@ export class UserComponent implements OnInit {
 
   userProfile: UserProfileModel;
 
-  constructor(private router: Router, private authenticationService: AuthenticationService) { }
+  constructor(private router: Router, private authenticationService: AuthenticationService, private templateService: TemplateService) { }
 
   ngOnInit() {
     this.authenticationService.userLoadededEvent
@@ -23,12 +25,16 @@ export class UserComponent implements OnInit {
           if (user) {
             this.userProfile = user.profile;
           } else {
-            window.location.reload();
+            this.userProfile = null;
           }
         }
       );
 
-    this.authenticationService.trySilentSignIn();
+    if (this.templateService.settings.toolbar.user.allowSilentSignIn) {
+      this.authenticationService.trySilentSignIn();
+    } else {
+      this.authenticationService.getUser();
+    }
   }
 
   signIn() {
@@ -36,7 +42,11 @@ export class UserComponent implements OnInit {
   }
 
   signOut() {
-    this.authenticationService.signOutRedirect();
+    if (this.templateService.settings.toolbar.user.allowSilentSignIn) {
+      this.authenticationService.signOutRedirect();
+    } else {
+      this.authenticationService.removeUser();
+    }
   }
 
 }
