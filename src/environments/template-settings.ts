@@ -23,12 +23,15 @@ export const templateSettings: TemplateSettings = {
     },
     user: {
       enable: true,
-      url: 'config/user.json'
+      allowSilentSignIn: true
     }
   },
   sidenav: {
     enable: true,
     mode: 'side',
     open: true
+  },
+  title: {
+    enable: true
   }
 };

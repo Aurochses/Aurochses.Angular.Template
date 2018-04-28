@@ -21,12 +21,15 @@ export class TemplateSettings {
     };
     user: {
       enable: boolean;
-      url: string;
+      allowSilentSignIn: boolean;
     }
   };
   sidenav: {
     enable: boolean;
     mode: string;
     open: boolean;
+  };
+  title: {
+    enable: boolean;
   };
 }

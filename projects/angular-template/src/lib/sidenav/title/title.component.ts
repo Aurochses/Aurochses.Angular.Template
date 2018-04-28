@@ -25,6 +25,7 @@ export class TitleComponent implements OnInit {
   }
 
   private getTitle(route) {
+    // TODO: need solution for tree menu cases
     let obj = this.router.config.find((e) => e.path === route.substr(1));
     return obj.data.title;
   }
