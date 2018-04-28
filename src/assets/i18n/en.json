@@ -7,7 +7,7 @@
       }
     }
   },
-  "ROUTES" :{
+  "MENU" :{
     "HOME": "Home",
     "OTHER": "Other",
     "HOME_2": "Home 2",
