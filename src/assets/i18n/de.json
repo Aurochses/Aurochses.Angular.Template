@@ -5,5 +5,12 @@
         "SIGN_IN": "Anmelden"
       }
     }
+  },
+  "ROUTES" :{
+    "HOME": "Zuhause",
+    "OTHER": "Andere",
+    "HOME_2": "Zuhause 2",
+    "SUB_OTHER": "Unter Anderen"
+
   }
 }

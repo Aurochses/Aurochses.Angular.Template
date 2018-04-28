@@ -15,7 +15,7 @@ const routes: Routes = [
         component: HomeComponent,
         data: {
             icon: 'home',
-            title: 'Home'
+            title: 'ROUTES.HOME'
         }
     },
     {
@@ -23,7 +23,7 @@ const routes: Routes = [
         component: OtherComponent,
         data: {
             icon: 'dashboard',
-            title: 'Other'
+            title: 'ROUTES.OTHER'
         },
         children: [
             {
@@ -35,7 +35,7 @@ const routes: Routes = [
                 ],
                 data: {
                     icon: 'person',
-                    title: 'Sub Other',
+                    title: 'ROUTES.SUB_OTHER',
                     permissions: ['fakePermission']
                 }
             }
@@ -50,7 +50,7 @@ const routes: Routes = [
         ],
         data: {
             icon: 'home',
-            title: 'Home'
+          title: 'ROUTES.HOME_2'
         }
     },
     {
