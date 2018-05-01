@@ -31,6 +31,10 @@ export const templateSettings: TemplateSettings = {
     mode: 'side',
     open: true
   },
+  breadcrumb: {
+    enable: true,
+    homeTitle: 'MENU.HOME'
+  },
   title: {
     enable: true
   }

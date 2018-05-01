@@ -6,6 +6,7 @@
     <aur-sidenav-menu></aur-sidenav-menu>
   </mat-sidenav>
   <mat-sidenav-content>
+    <aur-sidenav-breadcrumb *ngIf="templateService.settings.breadcrumb.enable"></aur-sidenav-breadcrumb>
     <aur-sidenav-title *ngIf="templateService.settings.title.enable"></aur-sidenav-title>
     
     <div fxLayout="row" fxLayoutAlign="center">

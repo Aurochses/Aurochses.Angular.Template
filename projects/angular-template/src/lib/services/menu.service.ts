@@ -4,15 +4,17 @@ import { ActivatedRoute, NavigationEnd, Route, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { filter, distinctUntilChanged, map, mergeMap } from 'rxjs/operators';
 
+import { TemplateService } from './template.service';
 import { MenuItemModel } from '../models/menu-item.model';
 import { RouteDataModel } from '../models/route-data.model';
+import { BreadcrumbModel } from '../models/breadcrumb.model';
 
 @Injectable()
 export class MenuService {
 
     private menuItems: Array<MenuItemModel>;
 
-    constructor(private router: Router, private activatedRoute: ActivatedRoute) {
+    constructor(private router: Router, private activatedRoute: ActivatedRoute, private templateService: TemplateService) {
         this.menuItems = this.convert(this.router.config);
     }
 
@@ -73,6 +75,41 @@ export class MenuService {
                 distinctUntilChanged(),
                 map(() => this.activatedRoute)
             );
+    }
+
+    getBreadcrumb(): Observable<BreadcrumbModel[]> {
+        return this.getActivatedRouteObservable()
+            .pipe(
+                map((activatedRoute) => this.buildBreadcrumb(activatedRoute.root))
+            );
+    }
+
+    private buildBreadcrumb(activatedRoute: ActivatedRoute, path: string = '', breadcrumbs: BreadcrumbModel[] = []): BreadcrumbModel[] {
+        let breadcrumb: BreadcrumbModel;
+
+        if (activatedRoute.routeConfig) {
+            path = `${path}/${activatedRoute.routeConfig.path}`;
+
+            breadcrumb = {
+                title: (<RouteDataModel> activatedRoute.routeConfig.data).title,
+                url: path
+            };
+        } else {
+            breadcrumb = {
+                title: this.templateService.settings.breadcrumb.homeTitle,
+                url: '/'
+            };
+        }
+
+        if (!(breadcrumbs.length === 1 && breadcrumbs[0].url === breadcrumb.url)) {
+            breadcrumbs.push(breadcrumb);
+        }
+
+        if (activatedRoute.firstChild) {
+            return this.buildBreadcrumb(activatedRoute.firstChild, path, breadcrumbs);
+        }
+
+        return breadcrumbs;
     }
 
 }
