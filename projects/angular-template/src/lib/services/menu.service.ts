@@ -52,8 +52,6 @@ export class MenuService {
     }
 
     getActivatedRouteData(): Observable<RouteDataModel> {
-        console.log('getActivatedRouteData');
-
         return this.getActivatedRouteObservable()
             .pipe(
                 map(

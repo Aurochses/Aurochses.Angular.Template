@@ -1,4 +1,4 @@
-<mat-sidenav-container [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+<mat-sidenav-container [style.marginTop.px]="mobileQuery.matches ? 56 : 64">
   <mat-sidenav *ngIf="templateService.settings.sidenav.enable"
                [mode]="mobileQuery.matches ? 'over' : templateService.settings.sidenav.mode"
                [opened]="templateService.settings.sidenav.open" fixedInViewport="true"

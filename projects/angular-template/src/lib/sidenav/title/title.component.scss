@@ -1,14 +1,8 @@
 .container {
   height: 64px;
-  display: flex;
-  flex-direction: column;
-  margin-top: 60px;
+  padding: 0 16px;
 
   .title {
     font-weight: bold;
-    padding-left: 1.5em;
-    height: 63px;
-    display: flex;
-    align-items: center;
   }
 }
