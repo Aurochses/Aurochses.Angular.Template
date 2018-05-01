@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, Route, Router } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Route, Router } from '@angular/router';
+
+import { Observable } from 'rxjs';
+import { filter, distinctUntilChanged, map, mergeMap } from 'rxjs/operators';
 
 import { MenuItemModel } from '../models/menu-item.model';
 import { RouteDataModel } from '../models/route-data.model';
@@ -9,16 +12,12 @@ export class MenuService {
 
     private menuItems: Array<MenuItemModel>;
 
-    constructor(router: Router) {
-        this.menuItems = this.convert(router.config);
+    constructor(private router: Router, private activatedRoute: ActivatedRoute) {
+        this.menuItems = this.convert(this.router.config);
     }
 
     getMenuItems(): Array<MenuItemModel> {
         return this.menuItems;
-    }
-
-    getRouteTitle(route: ActivatedRouteSnapshot): string {
-        return (<RouteDataModel>route.data).title;
     }
 
     private convert(routes: Route[], rootPath: string = ''): Array<MenuItemModel> {
@@ -50,6 +49,32 @@ export class MenuService {
         );
 
         return items;
+    }
+
+    getActivatedRouteData(): Observable<RouteDataModel> {
+        console.log('getActivatedRouteData');
+
+        return this.getActivatedRouteObservable()
+            .pipe(
+                map(
+                    (route) => {
+                        while (route.firstChild) { route = route.firstChild; }
+                        return route;
+                    }
+                ),
+                filter((route) => route.outlet === 'primary'),
+                mergeMap((route) => route.data),
+                map((data) => <RouteDataModel>data)
+            );
+    }
+
+    private getActivatedRouteObservable(): Observable<ActivatedRoute> {
+        return this.router.events
+            .pipe(
+                filter(event => event instanceof NavigationEnd),
+                distinctUntilChanged(),
+                map(() => this.activatedRoute)
+            );
     }
 
 }
