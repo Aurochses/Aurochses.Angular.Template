@@ -29,6 +29,10 @@ export class TemplateSettings {
     mode: string;
     open: boolean;
   };
+  breadcrumb: {
+    enable: boolean;
+    homeTitle: string;
+  };
   title: {
     enable: boolean;
   };
