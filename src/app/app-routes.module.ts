@@ -1,13 +1,10 @@
-import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
-import {
-  AuthenticationGuard,
-  AuthorizationGuard
-} from '@aurochses/angular-auth';
+import { AuthenticationGuard, AuthorizationGuard } from '@aurochses/angular-auth';
 
-import {HomeComponent} from './home/home.component';
-import {OtherComponent} from './other/other.component';
+import { HomeComponent } from './home/home.component';
+import { OtherComponent } from './other/other.component';
 
 const routes: Routes = [
   {
