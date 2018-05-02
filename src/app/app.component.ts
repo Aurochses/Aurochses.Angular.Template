@@ -9,6 +9,7 @@ import { TemplateService } from '@aurochses/angular-template';
   templateUrl: './app.component.html'
 })
 export class AppComponent {
+
   constructor(private templateService: TemplateService, translateService: TranslateService) {
     translateService.addLangs(['en', 'de']);
     translateService.setDefaultLang('en');
@@ -20,4 +21,5 @@ export class AppComponent {
     const detectedLanguage = localStorage.getItem(templateService.settings.toolbar.i18n.localStorageKey);
     translateService.use(detectedLanguage.match(/en|de/) ? detectedLanguage : translateService.getDefaultLang());
   }
+
 }
