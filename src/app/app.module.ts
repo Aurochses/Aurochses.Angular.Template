@@ -1,8 +1,7 @@
-import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RouterModule } from '@angular/router';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -34,9 +33,9 @@ export function createTranslateLoader(http: HttpClient) {
     OtherComponent
   ],
   imports: [
-    HttpClientModule,
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -44,15 +43,13 @@ export function createTranslateLoader(http: HttpClient) {
         deps: [HttpClient]
       }
     }),
-    RouterModule,
-    AppRoutesModule,
     AuthenticationModule.forRoot(environment, environment.authenticationSettings),
-    TemplateModule.forRoot(environment, environment.templateSettings)
+    TemplateModule.forRoot(environment, environment.templateSettings),
+    AppRoutesModule
   ],
   providers: [
     AuthenticationGuard,
-    AuthorizationGuard,
-    HttpClient
+    AuthorizationGuard
   ],
   bootstrap: [AppComponent]
 })
