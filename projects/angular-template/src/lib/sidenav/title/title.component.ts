@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import { TranslateService } from '@ngx-translate/core';
-
 import { MenuService } from '../../services/menu.service';
 
 @Component({
@@ -13,7 +11,7 @@ export class TitleComponent implements OnInit {
 
   title: string;
 
-  constructor(public translateService: TranslateService, private menuService: MenuService) { }
+  constructor(private menuService: MenuService) { }
 
   ngOnInit() {
     this.menuService.getActivatedRouteData()

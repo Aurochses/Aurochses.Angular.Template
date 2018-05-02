@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import { TranslateService } from '@ngx-translate/core';
-
 import { MenuService } from '../../services/menu.service';
 import { BreadcrumbModel } from '../../models/breadcrumb.model';
 
@@ -14,7 +12,7 @@ export class BreadcrumbComponent implements OnInit {
 
   breadcrumbs: Array<BreadcrumbModel>;
 
-  constructor(public translateService: TranslateService, private menuService: MenuService) { }
+  constructor(private menuService: MenuService) { }
 
   ngOnInit() {
     this.menuService.getBreadcrumb()
