@@ -15,13 +15,11 @@ import {
   AuthenticationGuard,
   AuthorizationGuard
 } from '@aurochses/angular-auth';
-import { authenticationSettings } from '../environments/authentication-settings';
 
 import { AppRoutesModule } from './app-routes.module';
 import { AppComponent } from './app.component';
 
 import { TemplateModule } from '@aurochses/angular-template';
-import { templateSettings } from '../environments/template-settings';
 
 import { HomeComponent } from './home/home.component';
 import { OtherComponent } from './other/other.component';
@@ -50,8 +48,8 @@ export function createTranslateLoader(http: HttpClient) {
     }),
     RouterModule,
     AppRoutesModule,
-    AuthenticationModule.forRoot(environment, authenticationSettings),
-    TemplateModule.forRoot(environment, templateSettings)
+    AuthenticationModule.forRoot(environment, environment.authenticationSettings),
+    TemplateModule.forRoot(environment, environment.templateSettings)
   ],
   providers: [
     AuthenticationService,
