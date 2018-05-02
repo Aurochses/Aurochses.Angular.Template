@@ -6,11 +6,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
-import {
-  AuthenticationModule,
-  AuthenticationGuard,
-  AuthorizationGuard
-} from '@aurochses/angular-auth';
+import { AuthenticationModule } from '@aurochses/angular-auth';
 
 import { TemplateModule } from '@aurochses/angular-template';
 
@@ -46,10 +42,6 @@ export function createTranslateLoader(http: HttpClient) {
     AuthenticationModule.forRoot(environment, environment.authenticationSettings),
     TemplateModule.forRoot(environment, environment.templateSettings),
     AppRoutesModule
-  ],
-  providers: [
-    AuthenticationGuard,
-    AuthorizationGuard
   ],
   bootstrap: [AppComponent]
 })
