@@ -34,7 +34,7 @@ export class MenuService {
                 if (route.children) {
                     const childrenItems = this.convert(route.children, path);
 
-                    if (route.data) {
+                    if (route.data && !route.data.hideInMenu) {
                         items.push(new MenuItemModel(route, path, childrenItems));
                     } else {
                         childrenItems.forEach(
@@ -44,7 +44,7 @@ export class MenuService {
                         );
                     }
                 } else {
-                    if (route.data && (route.data.showInMenu == null || route.data.showInMenu === true)) {
+                    if (route.data && !route.data.hideInMenu) {
                         items.push(new MenuItemModel(route, path, null));
                     }
                 }
