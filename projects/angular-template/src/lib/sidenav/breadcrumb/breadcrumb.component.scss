@@ -1,8 +1,24 @@
+@import '../../../../../../src/theme';
+
 .container {
   padding: 5px 16px 0px;
   font-size: 0.8em;
 
   .item {
     font-weight: bold;
+
+    a {
+      color: mat-color($accent);
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    span {
+      font-weight: normal;
+      padding: 0 7px;
+    }
   }
 }
