@@ -5,6 +5,7 @@ import { AuthenticationGuard, AuthorizationGuard } from '@aurochses/angular-auth
 
 import { HomeComponent } from './main/home/home.component';
 import { ItemComponent } from './main/nested/item.component';
+import { Item2Component } from './main/nested/item2.component';
 import { ListComponent } from './main/list/list.component';
 import { AddComponent } from './main/list/add.component';
 import { SecureComponent } from './main/secure/secure.component';
@@ -27,6 +28,11 @@ const routes: Routes = [
     children: [
       {
         path: '',
+        redirectTo: 'first',
+        pathMatch: 'full',
+      },
+      {
+        path: 'first',
         component: ItemComponent,
         canActivate: [
           AuthenticationGuard,
@@ -35,6 +41,18 @@ const routes: Routes = [
         data: {
           icon: 'crop_din',
           title: 'MENU.NESTED.ITEM'
+        }
+      },
+      {
+        path: 'second',
+        component: Item2Component,
+        canActivate: [
+          AuthenticationGuard,
+          AuthorizationGuard
+        ],
+        data: {
+          icon: 'crop_din',
+          title: 'MENU.NESTED.ITEM2'
         }
       }
     ]
@@ -63,7 +81,7 @@ const routes: Routes = [
         ],
         data: {
           title: 'MENU.LIST.ADD',
-          showInMenu: false
+          hideInMenu: true
         }
       }
     ]

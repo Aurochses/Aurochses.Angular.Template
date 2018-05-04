@@ -11,6 +11,7 @@
     "HOME": "Zuhause",
     "NESTED": "Geschachteltes Menü",
     "NESTED.ITEM": "Verschachteltes Element",
+    "NESTED.ITEM2": "Verschachteltes Element 2",
     "LIST": "Liste",
     "LIST.ADD": "Hinzufügen",
     "SECURE": "Sichern"
