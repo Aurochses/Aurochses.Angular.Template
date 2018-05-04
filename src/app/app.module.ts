@@ -14,9 +14,7 @@ import { environment } from '../environments/environment';
 
 import { AppRoutesModule } from './app-routes.module';
 import { AppComponent } from './app.component';
-
-import { HomeComponent } from './home/home.component';
-import { OtherComponent } from './other/other.component';
+import { MainModule } from './main/main.module';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -24,9 +22,7 @@ export function createTranslateLoader(http: HttpClient) {
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HomeComponent,
-    OtherComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +37,8 @@ export function createTranslateLoader(http: HttpClient) {
     }),
     AuthenticationModule.forRoot(environment, environment.authenticationSettings),
     TemplateModule.forRoot(environment, environment.templateSettings),
-    AppRoutesModule
+    AppRoutesModule,
+    MainModule
   ],
   bootstrap: [AppComponent]
 })
