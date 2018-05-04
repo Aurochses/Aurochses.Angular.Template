@@ -7,10 +7,12 @@
       }
     }
   },
-  "MENU" :{
+  "MENU": {
     "HOME": "Home",
-    "OTHER": "Other",
-    "HOME_2": "Home 2",
-    "SUB_OTHER": "Sub Other"
+    "NESTED": "Nested Menu",
+    "NESTED.ITEM": "Nested Item",
+    "LIST": "List",
+    "LIST.ADD": "Add",
+    "SECURE": "Secure"
   }
 }

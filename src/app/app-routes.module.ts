@@ -3,8 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AuthenticationGuard, AuthorizationGuard } from '@aurochses/angular-auth';
 
-import { HomeComponent } from './home/home.component';
-import { OtherComponent } from './other/other.component';
+import { HomeComponent } from './main/home/home.component';
+import { ItemComponent } from './main/nested/item.component';
+import { ListComponent } from './main/list/list.component';
+import { AddComponent } from './main/list/add.component';
+import { SecureComponent } from './main/secure/secure.component';
 
 const routes: Routes = [
   {
@@ -16,38 +19,66 @@ const routes: Routes = [
     }
   },
   {
-    path: 'other',
-    component: OtherComponent,
+    path: 'nested',
     data: {
-      icon: 'dashboard',
-      title: 'MENU.OTHER'
+      icon: 'filter_none',
+      title: 'MENU.NESTED'
     },
     children: [
       {
-        path: 'subOther',
-        component: OtherComponent,
+        path: '',
+        component: ItemComponent,
         canActivate: [
           AuthenticationGuard,
           AuthorizationGuard
         ],
         data: {
-          icon: 'person',
-          title: 'MENU.SUB_OTHER',
-          permissions: ['fakePermission']
+          icon: 'crop_din',
+          title: 'MENU.NESTED.ITEM'
         }
       }
     ]
   },
   {
-    path: 'second',
-    component: OtherComponent,
+    path: 'list',
+    data: {
+      icon: 'list',
+      title: 'MENU.LIST'
+    },
+    children: [
+      {
+        path: '',
+        component: ListComponent,
+        canActivate: [
+          AuthenticationGuard,
+          AuthorizationGuard
+        ]
+      },
+      {
+        path: 'add',
+        component: AddComponent,
+        canActivate: [
+          AuthenticationGuard,
+          AuthorizationGuard
+        ],
+        data: {
+          title: 'MENU.LIST.ADD',
+          showInMenu: false
+        }
+      }
+    ]
+  },
+  {
+    path: 'secure',
+    component: SecureComponent,
     canActivate: [
       AuthenticationGuard,
       AuthorizationGuard
     ],
     data: {
-      icon: 'home',
-      title: 'MENU.HOME_2'
+      icon: 'security',
+      title: 'MENU.SECURE',
+      permissions: ['fakePermission']
     }
   },
   {

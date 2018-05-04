@@ -33,6 +33,7 @@ export class MenuService {
 
                 if (route.children) {
                     const childrenItems = this.convert(route.children, path);
+
                     if (route.data) {
                         items.push(new MenuItemModel(route, path, childrenItems));
                     } else {
@@ -43,7 +44,7 @@ export class MenuService {
                         );
                     }
                 } else {
-                    if (route.data) {
+                    if (route.data && (route.data.showInMenu == null || route.data.showInMenu === true)) {
                         items.push(new MenuItemModel(route, path, null));
                     }
                 }
@@ -89,6 +90,10 @@ export class MenuService {
 
         if (activatedRoute.routeConfig) {
             path = `${path}/${activatedRoute.routeConfig.path}`;
+
+            if (activatedRoute.routeConfig.data == null) {
+                return breadcrumbs;
+            }
 
             breadcrumb = {
                 title: (<RouteDataModel> activatedRoute.routeConfig.data).title,
