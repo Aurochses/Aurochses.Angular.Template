@@ -16,7 +16,8 @@ const routes: Routes = [
     component: HomeComponent,
     data: {
       icon: 'home',
-      title: 'MENU.HOME'
+      title: 'MENU.HOME',
+      showMenuDividerAfter: true
     }
   },
   {
@@ -61,7 +62,7 @@ const routes: Routes = [
     path: 'list',
     data: {
       icon: 'list',
-      title: 'MENU.LIST'
+      title: 'MENU.LIST',
     },
     children: [
       {
@@ -96,6 +97,7 @@ const routes: Routes = [
     data: {
       icon: 'security',
       title: 'MENU.SECURE',
+      showMenuDividerBefore: true,
       permissions: ['fakePermission']
     }
   },
