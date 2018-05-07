@@ -2,7 +2,7 @@
   "name": "@aurochses/angular-template",
   "version": "1.0.3",
   "author": "Aurochses",
-  "dependencies": {
+  "peerDependencies": {
     "@angular/common": "^6.0.0",
     "@angular/core": "^6.0.0",
     "@angular/router": "^6.0.0",
