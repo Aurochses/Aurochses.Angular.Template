@@ -1,3 +1,5 @@
+<mat-divider *ngIf="menuItem.data.showMenuDividerBefore"></mat-divider>
+
 <mat-list-item (click)="onMenuItemSelected(menuItem)" [ngStyle]="{'padding-left': (depth * 12) + 'px'}" [ngClass]="{'active': isActive()}">
     <mat-icon mat-list-icon *ngIf="menuItem.data.icon" color="primary">{{menuItem.data.icon}}</mat-icon>
     <h4 mat-line>{{menuItem.data.title | translate}}</h4>
@@ -9,3 +11,5 @@
 <div *ngIf="expanded">
     <aur-sidenav-menu-item *ngFor="let child of menuItem.children" [menuItem]="child" [depth]="depth+1"></aur-sidenav-menu-item>
 </div>
+
+<mat-divider *ngIf="menuItem.data.showMenuDividerAfter"></mat-divider>
