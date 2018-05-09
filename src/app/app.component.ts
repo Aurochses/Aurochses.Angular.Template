@@ -9,6 +9,7 @@ import { TemplateService } from '@aurochses/angular-template';
   templateUrl: './app.component.html'
 })
 export class AppComponent {
+  title = 'app';
 
   constructor(private templateService: TemplateService, translateService: TranslateService) {
     translateService.addLangs(['en', 'de']);
