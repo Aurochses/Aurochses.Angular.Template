@@ -18,7 +18,7 @@ export const templateSettings: TemplateSettings = {
       url: 'assets/applications.json',
       current: {
         id: '1',
-        showInMenu: false
+        showInMenu: true
       }
     },
     notifications: {
