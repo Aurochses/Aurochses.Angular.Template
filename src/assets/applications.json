@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "icon": "home",
+        "title": "Current Application",
+        "url": "http://localhost:4200",
+        "openInNewWindow": false
+    },
+    {
+        "id": 2,
+        "icon": "play_arrow",
+        "title": "Other Application",
+        "url": "https://youtube.com",
+        "openInNewWindow": true
+    }
+]

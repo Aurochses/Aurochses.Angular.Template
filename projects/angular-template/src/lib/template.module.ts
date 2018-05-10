@@ -22,6 +22,7 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
 import { LogoComponent } from './toolbar/logo/logo.component';
 import { I18nComponent } from './toolbar/i18n/i18n.component';
 import { FullScreenComponent } from './toolbar/full-screen/full-screen.component';
+import { ApplicationsService } from './services/applications.service';
 import { ApplicationsComponent } from './toolbar/applications/applications.component';
 import { NotificationsComponent } from './toolbar/notifications/notifications.component';
 import { UserComponent } from './toolbar/user/user.component';
@@ -65,7 +66,8 @@ import { TitleComponent } from './sidenav/title/title.component';
   ],
   providers: [
     TemplateService,
-    MenuService
+    ApplicationsService,
+    MenuService,
   ],
   exports: [
     TemplateComponent

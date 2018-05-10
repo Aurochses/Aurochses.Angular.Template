@@ -2,6 +2,17 @@
     <mat-icon>apps</mat-icon>
 </button>
 
-<mat-menu #toolbarApplicationsMenu="matMenu" [overlapTrigger]="false" class="toolbarApplicationsMenu">
+<mat-menu #toolbarApplicationsMenu="matMenu" [overlapTrigger]="false" class="my-menu">
+    <ng-template [ngIf]="applications">
+        <ng-container *ngFor="let application of applications">
+            <a mat-menu-item href="{{application.url}}" target="{{application.openInNewWindow ? '_blank' : '_self'}}">
+                <mat-icon>{{application.icon}}</mat-icon>
+                <span>{{application.title | translate}}</span>
+            </a>
+        </ng-container>
+    </ng-template>
 
+    <ng-template [ngIf]="!applications">
+        loading...
+    </ng-template>
 </mat-menu>
