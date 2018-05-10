@@ -25,7 +25,7 @@ export class ApplicationsComponent implements OnInit {
           ) {
             this.applications = applications.filter(
               (application) => {
-                return application.id.toString() !== this.templateService.settings.toolbar.applications.current.id.toString();
+                return !this.checkCurrent(application);
               }
             );
           } else {
@@ -33,6 +33,10 @@ export class ApplicationsComponent implements OnInit {
           }
         }
       );
+  }
+
+  checkCurrent(application: ApplicationModel): boolean {
+    return application.id.toString() === this.templateService.settings.toolbar.applications.current.id.toString();
   }
 
 }
