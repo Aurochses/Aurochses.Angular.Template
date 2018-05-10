@@ -33,7 +33,7 @@ export class UserComponent implements OnInit {
     if (this.templateService.settings.toolbar.user.allowSilentSignIn) {
       this.authenticationService.trySilentSignIn();
     } else {
-      this.authenticationService.getUser();
+      this.authenticationService.loadUser();
     }
   }
 
