@@ -14,6 +14,10 @@ export class TemplateSettings {
     applications: {
       enable: boolean;
       url: string;
+      current: {
+        id: string;
+        showInMenu: boolean;
+      }
     };
     notifications: {
       enable: boolean;

@@ -15,11 +15,15 @@ export const templateSettings: TemplateSettings = {
     },
     applications: {
       enable: true,
-      url: ''
+      url: 'assets/applications.json',
+      current: {
+        id: '1',
+        showInMenu: false
+      }
     },
     notifications: {
       enable: true,
-      url: 'config/notifications.json'
+      url: 'assets/notifications.json'
     },
     user: {
       enable: true,
