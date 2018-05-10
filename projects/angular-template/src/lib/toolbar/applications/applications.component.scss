@@ -1,0 +1,7 @@
+@import '../../../../../../src/theme';
+
+.container {
+    color: mat-color($primary);
+    min-width: 200px;
+    min-height: 200px;
+}
