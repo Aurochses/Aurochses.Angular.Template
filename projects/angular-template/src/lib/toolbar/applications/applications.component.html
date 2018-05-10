@@ -3,7 +3,7 @@
 </button>
 
 <mat-menu #toolbarApplicationsMenu="matMenu" [overlapTrigger]="false" class="my-menu">
-    <ng-template [ngIf]="applications">
+    <ng-template [ngIf]="applications && applications.length > 0">
         <ng-container *ngFor="let application of applications">
             <a mat-menu-item href="{{application.url}}" target="{{application.openInNewWindow ? '_blank' : '_self'}}">
                 <mat-icon>{{application.icon}}</mat-icon>
@@ -12,7 +12,16 @@
         </ng-container>
     </ng-template>
 
+    <ng-template [ngIf]="applications && applications.length === 0">
+        <div fxLayout="column" fxLayoutAlign="center center" class="container">
+            <mat-icon color="primary">block</mat-icon>
+            <div>no applications</div>
+        </div>
+    </ng-template>
+
     <ng-template [ngIf]="!applications">
-        loading...
+        <div fxLayout="row" fxLayoutAlign="center center" class="container">
+            <mat-spinner color="primary" diameter="40"></mat-spinner>
+        </div>
     </ng-template>
 </mat-menu>
