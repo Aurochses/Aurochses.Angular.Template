@@ -117,5 +117,4 @@ const routes: Routes = [
     AuthorizationGuard
   ]
 })
-export class AppRoutesModule {
-}
+export class AppRoutesModule { }
