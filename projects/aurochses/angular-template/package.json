@@ -10,7 +10,7 @@
     "@angular/flex-layout": "^6.0.0-beta.15",
     "@angular/material": "^6.0.0",
     "@angular/router": "^6.0.0",
-    "@aurochses/angular-auth": "^1.0.3",
+    "@aurochses/angular-auth": "^1.0.5",
     "@ngx-translate/core": "^10.0.1"
   }
 }
