@@ -1,27 +1,25 @@
-# Demo
+# Aurochses Angular Template
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
+Library for Angular that allows create fast and easy template with toolbar, logo, menu and user.
 
-## Development server
+## npm
+[![npm](https://img.shields.io/npm/v/@aurochses/angular-template.svg)](https://www.npmjs.com/package/@aurochses/angular-template)
+[![Dependency Status](https://david-dm.org/Aurochses/Aurochses.Angular.Template.svg)](https://david-dm.org/Aurochses/Aurochses.Angular.Template)
+[![devDependency Status](https://david-dm.org/Aurochses/Aurochses.Angular.Template/dev-status.svg)](https://david-dm.org/Aurochses/Aurochses.Angular.Template?type=dev)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Web
 
-## Code scaffolding
+Type        | Web 
+------------|-----
+Test        | [web](http://template.test.angular.aurochses.demo.by)
+Staging     | [web](http://template.staging.angular.aurochses.demo.by)
+Production  | [web](http://template.production.angular.aurochses.demo.by)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Builds
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Type            | Status 
+----------------|--------
+CI (develop)    | [![Visual Studio Team services](https://img.shields.io/vso/build/aurochses/ce77dc57-7f15-4037-90d9-c33247949dda/358.svg?style=flat-square)](https://aurochses.visualstudio.com/Aurochses.Angular/_build/index?definitionId=358)
+CI (pre-master) | [![Visual Studio Team services](https://img.shields.io/vso/build/aurochses/ce77dc57-7f15-4037-90d9-c33247949dda/359.svg?style=flat-square)](https://aurochses.visualstudio.com/Aurochses.Angular/_build/index?definitionId=359)
+PR (latest)     | [![Visual Studio Team services](https://img.shields.io/vso/build/aurochses/ce77dc57-7f15-4037-90d9-c33247949dda/360.svg?style=flat-square)](https://aurochses.visualstudio.com/Aurochses.Angular/_build/index?definitionId=360)
+CI (master)     | [![Visual Studio Team services](https://img.shields.io/vso/build/aurochses/ce77dc57-7f15-4037-90d9-c33247949dda/361.svg?style=flat-square)](https://aurochses.visualstudio.com/Aurochses.Angular/_build/index?definitionId=361)
