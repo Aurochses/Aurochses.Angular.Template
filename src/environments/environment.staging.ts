@@ -1,8 +1,8 @@
-import { authenticationSettings } from '../environments/authentication-settings.prod';
+import { authenticationSettings } from '../environments/authentication-settings.staging';
 import { templateSettings } from '../environments/template-settings';
 
 export const environment = {
-  production: true,
+  production: false,
   authenticationSettings: authenticationSettings,
   templateSettings: templateSettings
 };
