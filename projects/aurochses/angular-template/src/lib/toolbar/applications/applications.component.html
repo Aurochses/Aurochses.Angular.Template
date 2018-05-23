@@ -1,0 +1,36 @@
+<button mat-icon-button color="primary" [matMenuTriggerFor]="toolbarApplicationsMenu">
+    <mat-icon>apps</mat-icon>
+</button>
+
+<mat-menu #toolbarApplicationsMenu="matMenu" [overlapTrigger]="false" class="my-menu">
+    <ng-template [ngIf]="applications && applications.length">
+        <ng-container *ngFor="let application of applications">
+            <ng-template [ngIf]="!checkCurrent(application)" [ngIfElse]="currentApplication">
+                <a mat-menu-item href="{{application.url}}" target="{{application.openInNewWindow ? '_blank' : '_self'}}">
+                    <mat-icon>{{application.icon}}</mat-icon>
+                    <span>{{application.title | translate}}</span>
+                </a>
+            </ng-template>
+
+            <ng-template #currentApplication>
+                <div mat-menu-item disabled>
+                    <mat-icon color="accent">{{application.icon}}</mat-icon>
+                    <span>{{application.title | translate}}</span>
+                </div>
+            </ng-template>
+        </ng-container>
+    </ng-template>
+
+    <ng-template [ngIf]="applications && !applications.length">
+        <div fxLayout="column" fxLayoutAlign="center center" class="container">
+            <mat-icon color="primary">block</mat-icon>
+            <div>no applications</div>
+        </div>
+    </ng-template>
+
+    <ng-template [ngIf]="!applications">
+        <div fxLayout="row" fxLayoutAlign="center center" class="container">
+            <mat-spinner color="primary" diameter="40"></mat-spinner>
+        </div>
+    </ng-template>
+</mat-menu>

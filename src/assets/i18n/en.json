@@ -1,0 +1,19 @@
+{
+  "AUR_TEMPLATE": {
+    "TOOLBAR": {
+      "USER": {
+        "SIGN_IN": "Sign In",
+        "SIGN_OUT": "Sign Out"
+      }
+    }
+  },
+  "MENU": {
+    "HOME": "Home",
+    "NESTED": "Nested Menu",
+    "NESTED.ITEM": "Nested Item",
+    "NESTED.ITEM2": "Nested Item 2",
+    "LIST": "List",
+    "LIST.ADD": "Add",
+    "SECURE": "Secure"
+  }
+}

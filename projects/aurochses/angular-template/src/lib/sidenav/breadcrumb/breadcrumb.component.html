@@ -1,0 +1,12 @@
+<div fxLayout="row" fxLayoutAlign="start center" class="container">
+  <div *ngFor="let breadcrumb of breadcrumbs; let last = last" class="item">
+    <ng-template [ngIf]="!last">
+      <a [routerLink]="breadcrumb.url" color="primary">{{breadcrumb.title | translate}}</a>
+      <span>></span>
+    </ng-template>
+
+    <ng-template [ngIf]="last">
+      {{breadcrumb.title | translate}}
+    </ng-template>
+  </div>
+</div>
