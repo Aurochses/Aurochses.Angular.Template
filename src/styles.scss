@@ -1,0 +1,50 @@
+@import './theme';
+
+// Include the base styles for Angular Material icons
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+// Include the base styles for Angular Material core. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component that you are using.
+@include angular-material-theme($theme);
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: mat-font-family($config);
+    background-color: #fafafa;
+}
+
+aur-toolbar {
+    mat-toolbar {
+        &.mat-toolbar {
+            background-color: #ffffff;
+        }
+    }
+}
+
+aur-sidenav {
+    mat-sidenav {
+        &.mat-drawer {
+            background-color: #f5f5f5;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: hsla(0, 0%, 53.3%, .4);
+        }
+
+        aur-sidenav-menu {
+            mat-nav-list {
+                mat-list-item {
+                    > .mat-list-item-content {
+                        padding: 0 20px !important;
+                    }
+                }
+            }
+        }
+    }
+}

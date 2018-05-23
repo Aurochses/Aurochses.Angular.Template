@@ -1,0 +1,28 @@
+<ng-template [ngIf]="!userProfile">
+    <button mat-button class="signIn" (click)="signIn()">
+        {{'AUR_TEMPLATE.TOOLBAR.USER.SIGN_IN' | translate}}
+    </button>
+</ng-template>
+
+<ng-template [ngIf]="userProfile">
+    <button mat-icon-button [matMenuTriggerFor]="toolbarUserMenu">
+        <img src="assets/avatar.png" class="user-avatar-image" />
+    </button>
+
+    <mat-menu #toolbarUserMenu="matMenu" [overlapTrigger]="false">
+        <div class="user-menu-item">
+            <div class="user-avatar">
+                <img src="assets/avatar.png" class="user-avatar-image" />
+            </div>
+            <div class="user-profile">
+                <div class="user-profile-name">{{userProfile.given_name}} {{userProfile.family_name}}</div>
+                <div>{{userProfile.email}}</div>
+            </div>
+        </div>
+
+        <button mat-menu-item (click)="signOut()">
+            <mat-icon>input</mat-icon>
+            <span>{{'AUR_TEMPLATE.TOOLBAR.USER.SIGN_OUT' | translate}}</span>
+        </button>
+    </mat-menu>
+</ng-template>
