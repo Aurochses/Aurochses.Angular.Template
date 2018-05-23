@@ -1,0 +1,23 @@
+mat-sidenav {
+    width: 240px;
+
+    &.mat-drawer {
+        overflow: hidden;
+
+        &:hover {
+            overflow-y: auto;
+        }
+    }
+
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        height: 56px;
+    }
+}
+
+mat-sidenav-container {
+    position: initial;
+}

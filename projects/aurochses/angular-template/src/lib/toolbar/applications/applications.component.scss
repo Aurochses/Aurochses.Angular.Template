@@ -1,0 +1,11 @@
+@import '../../../../../../../src/theme';
+
+.mat-menu-item[disabled] {
+    color: mat-color($accent);
+}
+
+.container {
+    color: mat-color($primary);
+    min-width: 200px;
+    min-height: 200px;
+}
