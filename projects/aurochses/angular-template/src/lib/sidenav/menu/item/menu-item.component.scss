@@ -1,0 +1,17 @@
+@import '../../../../../../../../src/theme';
+
+mat-list-item {
+    &.active {
+        .mat-list-icon {
+            color: mat-color($accent);
+        }
+
+        h4 {
+            font-weight: 600;
+        }
+    }
+}
+
+mat-divider {
+    margin: 6px 0;
+}
