@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { map } from 'rxjs/operators';
-
 import { AuthenticationService, UserModel, UserProfileModel } from '@aurochses/angular-auth';
 
 import { TemplateService } from '../../services/template.service';
