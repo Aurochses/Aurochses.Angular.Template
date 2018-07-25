@@ -11,7 +11,7 @@ import { TemplateService } from '@aurochses/angular-template';
 export class AppComponent {
   title = 'app';
 
-  constructor(private templateService: TemplateService, translateService: TranslateService) {
+  constructor(templateService: TemplateService, translateService: TranslateService) {
     translateService.addLangs(['en', 'de']);
     translateService.setDefaultLang('en');
 
