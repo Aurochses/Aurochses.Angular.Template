@@ -20,4 +20,10 @@ mat-sidenav {
 
 mat-sidenav-container {
     position: initial;
+    @media (max-width: 599px) {
+      height: calc(100vh - 56px);
+    }
+    @media (min-width: 600px) {
+      height: calc(100vh - 64px);
+    }
 }
