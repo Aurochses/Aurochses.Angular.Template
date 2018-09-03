@@ -8,9 +8,9 @@
   <mat-sidenav-content>
     <aur-sidenav-breadcrumb *ngIf="templateService.settings.breadcrumb.enable"></aur-sidenav-breadcrumb>
     <aur-sidenav-title *ngIf="templateService.settings.title.enable"></aur-sidenav-title>
-    
+
     <div fxLayout="row" fxLayoutAlign="center">
-      <div fxFlex="1300px" fxFlex.lg="1000px" fxFlex.lt-lg="100%" ngStyle.lt-lg="padding: 0 10px;">
+      <div class="content-wrapper">
         <router-outlet></router-outlet>
       </div>
     </div>
