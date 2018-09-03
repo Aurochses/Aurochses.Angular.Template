@@ -1,6 +1,6 @@
 {
   "name": "@aurochses/angular-template",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "author": "Aurochses",
   "peerDependencies": {
     "@angular/animations": "^6.0.9",
